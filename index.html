@@ -1,0 +1,2062 @@
+<!doctype html>
+
+<html lang="pt-br">
+<head>
+<title>{hotcss}</title>
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+<link href="http://code.hotpage.com.br/jquery/jquery-ui-1.10.3.custom/css/custom-theme/jquery-ui-1.10.3.custom.css" rel="stylesheet"> 
+<script src="http://code.hotpage.com.br/jquery/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js"></script>  
+
+<link rel="stylesheet" type="text/css" href="css/hotcss.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+<script src="js/hotcss.js"></script>
+
+
+<script type="text/javascript">     
+    
+$(function() {
+    
+    $( "#tabs" ).tabs();
+ 
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+    
+    $('#togglepanel').accordion({
+        collapsible:true,                    
+        beforeActivate: function(event, ui) {            
+            if (ui.newHeader[0]) {
+                var currHeader  = ui.newHeader;
+                var currContent = currHeader.next('.ui-accordion-content');             
+            } else {
+                var currHeader  = ui.oldHeader;
+                var currContent = currHeader.next('.ui-accordion-content');
+            }            
+            var isPanelSelected = currHeader.attr('aria-selected') == 'true';            
+            currHeader.toggleClass('ui-corner-all',isPanelSelected).toggleClass('accordion-header-active ui-state-active ui-corner-top',!isPanelSelected).attr('aria-selected',((!isPanelSelected).toString()));            
+            currHeader.children('.ui-icon').toggleClass('ui-icon-triangle-1-e',isPanelSelected).toggleClass('ui-icon-triangle-1-s',!isPanelSelected);
+            currContent.toggleClass('accordion-content-active',!isPanelSelected)    
+            if (isPanelSelected) { currContent.slideUp(); }  else { currContent.slideDown(); }
+            return false; 
+        }
+    });
+});
+
+    
+</script>
+
+</head>
+
+<body>  
+    
+<div id="hotoffcanvas" class="hotoffcanvas">     
+    
+    <a href="#offcanvas-left" class="btoffcanvas btoffcanvas-left" title="OFF CANVAS LEFT"></a> 
+    <a href="#offcanvas-right" class="btoffcanvas btoffcanvas-right" title="OFF CANVAS RIGHT"></a>     
+    
+    <div id="offcanvas-top" class="hotoffcanvas-top">
+        <a href="#hidebox" class="btoffcanvas btoffcanvas-top-out"></a> 
+        <div class="hotcol-10-12 center"><p>Contents class="hotoffcanvas-top" </p></div>
+    </div>
+    
+    <div id="offcanvas-left" class="hotoffcanvas-left">
+        <a href="#hidebox" class="btoffcanvas btoffcanvas-left-out"></a> 
+        <div class="hotcol-10-12"><p> Contents class="hotoffcanvas-left" </p></div>
+    </div>
+    
+    <div id="offcanvas-right" class="hotoffcanvas-right">
+        <a href="#hidebox" class="btoffcanvas btoffcanvas-right-out"></a>
+        <div class="hotcol-10-12 push-2-12"><p>Contents class="hotoffcanvas-right"</p></div>
+    </div>
+    
+    <div id="offcanvas-bottom" class="hotoffcanvas-bottom"> 
+        <a href="#hidebox" class="btoffcanvas btoffcanvas-bottom-out"></a>
+        <div class="hotcol-10-12 center"> <p>Contents class="hotoffcanvas-bottom" </p> </div>
+    </div>
+    
+<div id="hotcanvas" class="hotcanvas"> 
+
+<header class="fixed-header hotcontainer-fluid black text-align-center">    
+    <div class="hotcol-1-12">
+       <a href="#offcanvas-top" class="btoffcanvas btoffcanvas-top" title="OFF CANVAS TOP"></a> 
+    </div>
+    <div class="hotcol-10-12">
+       <h1 class="font-write">{hotcss}</h1>
+       <p>class=fixed-header</p>
+    </div>  
+</header>
+    
+<footer class="fixed-footer hotcontainer-fluid black text-align-center">
+    <div class="hotcol-1-12">
+       <a href="#offcanvas-bottom" class="btoffcanvas btoffcanvas-bottom" title="OFF CANVAS BOTTOM"></a> 
+    </div>
+    <div class="hotcol-10-12">
+       <p>class=fixed-footer</p>   
+    </div>   
+</footer>
+   
+<br />
+
+<!-- ++++++++++++++++ GRID +++++++++++++++++++  -->
+ 
+<div class="hotcontainer" id="grid">
+<hr>
+  <h2>HotGrid</h2>
+<hr>
+</div>
+<div class="hotcontainer">
+  
+  <div class="content">
+    <h3>div class="hotcontainer"</h3>
+  </div>
+</div>
+<div class="hotcontainer-fluid">
+  <div class="content">
+    <h3>div class="hotcontainer-fluid"</h3>
+  </div>
+</div>
+<br />
+
+<div class="hotcontainer">
+  <!-- Grid 2/3 and 1/3-->
+  
+  <div class="hotpad">    
+      <center>class="hotpad"</center>          
+  </div>
+  <br>
+</div>
+  
+<!--
+========================================================================
+-->
+<div class="hotcontainer">
+  <!-- Grid 2/3 and 1/3-->
+  
+  <div class="hotpad">
+    <div class="hotcol-1-1">
+      <div class="content">hotcol-1-1</div>
+    </div>
+  </div>
+  
+  <!-- Grid 1/2 -->
+  
+  <div class="hotpad">
+    <div class="hotcol-1-2">
+      <div class="content">hotcol-1-2</div>
+    </div>
+    <div class="hotcol-1-2">
+      <div class="content">hotcol-1-2</div>
+    </div>
+  </div>
+  
+  <!-- Grid 1/3 -->
+  
+  <div class="hotpad">
+    <div class="hotcol-1-3">
+      <div class="content">hotcol-1-3</div>
+    </div>
+    <div class="hotcol-1-3">
+      <div class="content">hotcol-1-3</div>
+    </div>
+    <div class="hotcol-1-3">
+      <div class="content">hotcol-1-3</div>
+    </div>
+  </div>
+  
+  <!-- Grid 1/4 -->
+  
+  <div class="hotpad">
+    <div class="hotcol-1-4">
+      <div class="content">hotcol-1-4</div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="content">hotcol-1-4</div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="content">hotcol-1-4</div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="content">hotcol-1-4</div>
+    </div>
+  </div>
+  
+  <!-- Grid 1/5 -->
+  
+  <div class="hotpad">
+    <div class="hotcol-1-5">
+      <div class="content">hotcol-1-5</div>
+    </div>
+    <div class="hotcol-1-5">
+      <div class="content">hotcol-1-5</div>
+    </div>
+    <div class="hotcol-1-5">
+      <div class="content">hotcol-1-5</div>
+    </div>
+    <div class="hotcol-1-5">
+      <div class="content">hotcol-1-5</div>
+    </div>
+    <div class="hotcol-1-5">
+      <div class="content">hotcol-1-5</div>
+    </div>
+  </div>
+  
+  <!-- Grid 1/6 -->
+  
+  <div class="hotpad">
+    <div class="hotcol-1-6">
+      <div class="content">hotcol-1-6</div>
+    </div>
+    <div class="hotcol-1-6">
+      <div class="content">hotcol-1-6</div>
+    </div>
+    <div class="hotcol-1-6">
+      <div class="content">hotcol-1-6</div>
+    </div>
+    <div class="hotcol-1-6">
+      <div class="content">hotcol-1-6</div>
+    </div>
+    <div class="hotcol-1-6">
+      <div class="content">hotcol-1-6</div>
+    </div>
+    <div class="hotcol-1-6">
+      <div class="content">hotcol-1-6</div>
+    </div>
+  </div>
+  
+  <!-- Grid 1/7 -->
+  
+  <div class="hotpad">
+    <div class="hotcol-1-7">
+      <div class="content">hotcol-1-7</div>
+    </div>
+    <div class="hotcol-1-7">
+      <div class="content">hotcol-1-7</div>
+    </div>
+    <div class="hotcol-1-7">
+      <div class="content">hotcol-1-7</div>
+    </div>
+    <div class="hotcol-1-7">
+      <div class="content">hotcol-1-7</div>
+    </div>
+    <div class="hotcol-1-7">
+      <div class="content">hotcol-1-7</div>
+    </div>
+    <div class="hotcol-1-7">
+      <div class="content">hotcol-1-7</div>
+    </div>
+    <div class="hotcol-1-7">
+      <div class="content">hotcol-1-7</div>
+    </div>
+  </div>
+  
+  <!-- Grid 1/8 -->
+  
+  <div class="hotpad">
+    <div class="hotcol-1-8">
+      <div class="content">hotcol-1-8</div>
+    </div>
+    <div class="hotcol-1-8">
+      <div class="content">hotcol-1-8</div>
+    </div>
+    <div class="hotcol-1-8">
+      <div class="content">hotcol-1-8</div>
+    </div>
+    <div class="hotcol-1-8">
+      <div class="content">hotcol-1-8</div>
+    </div>
+    <div class="hotcol-1-8">
+      <div class="content">hotcol-1-8</div>
+    </div>
+    <div class="hotcol-1-8">
+      <div class="content">hotcol-1-8</div>
+    </div>
+    <div class="hotcol-1-8">
+      <div class="content">hotcol-1-8</div>
+    </div>
+    <div class="hotcol-1-8">
+      <div class="content">hotcol-1-8</div>
+    </div>
+  </div>
+  
+  <!-- Grid 1/9 -->
+  
+  <div class="hotpad">
+    <div class="hotcol-1-9">
+      <div class="content">hotcol-1-9</div>
+    </div>
+    <div class="hotcol-1-9">
+      <div class="content">hotcol-1-9</div>
+    </div>
+    <div class="hotcol-1-9">
+      <div class="content">hotcol-1-9</div>
+    </div>
+    <div class="hotcol-1-9">
+      <div class="content">hotcol-1-9</div>
+    </div>
+    <div class="hotcol-1-9">
+      <div class="content">hotcol-1-9</div>
+    </div>
+    <div class="hotcol-1-9">
+      <div class="content">hotcol-1-9</div>
+    </div>
+    <div class="hotcol-1-9">
+      <div class="content">hotcol-1-9</div>
+    </div>
+    <div class="hotcol-1-9">
+      <div class="content">hotcol-1-9</div>
+    </div>
+    <div class="hotcol-1-9">
+      <div class="content">hotcol-1-9</div>
+    </div>
+  </div>
+  
+  <!-- Grid 1/10 -->
+  
+  <div class="hotpad">
+    <div class="hotcol-1-10">
+      <div class="content">hotcol-1-10</div>
+    </div>
+    <div class="hotcol-1-10">
+      <div class="content">hotcol-1-10</div>
+    </div>
+    <div class="hotcol-1-10">
+      <div class="content">hotcol-1-10</div>
+    </div>
+    <div class="hotcol-1-10">
+      <div class="content">hotcol-1-10</div>
+    </div>
+    <div class="hotcol-1-10">
+      <div class="content">hotcol-1-10</div>
+    </div>
+    <div class="hotcol-1-10">
+      <div class="content">hotcol-1-10</div>
+    </div>
+    <div class="hotcol-1-10">
+      <div class="content">hotcol-1-10</div>
+    </div>
+    <div class="hotcol-1-10">
+      <div class="content">hotcol-1-10</div>
+    </div>
+    <div class="hotcol-1-10">
+      <div class="content">hotcol-1-10</div>
+    </div>
+    <div class="hotcol-1-10">
+      <div class="content">hotcol-1-10</div>
+    </div>
+  </div>
+  
+  <!-- Grid 1/11 -->
+  
+  <div class="hotpad">
+    <div class="hotcol-1-11">
+      <div class="content">hotcol-1-11</div>
+    </div>
+    <div class="hotcol-1-11">
+      <div class="content">hotcol-1-11</div>
+    </div>
+    <div class="hotcol-1-11">
+      <div class="content">hotcol-1-11</div>
+    </div>
+    <div class="hotcol-1-11">
+      <div class="content">hotcol-1-11</div>
+    </div>
+    <div class="hotcol-1-11">
+      <div class="content">hotcol-1-11</div>
+    </div>
+    <div class="hotcol-1-11">
+      <div class="content">hotcol-1-11</div>
+    </div>
+    <div class="hotcol-1-11">
+      <div class="content">hotcol-1-11</div>
+    </div>
+    <div class="hotcol-1-11">
+      <div class="content">hotcol-1-11</div>
+    </div>
+    <div class="hotcol-1-11">
+      <div class="content">hotcol-1-11</div>
+    </div>
+    <div class="hotcol-1-11">
+      <div class="content">hotcol-1-11</div>
+    </div>
+    <div class="hotcol-1-11">
+      <div class="content">hotcol-1-11</div>
+    </div>
+  </div>
+  
+  <!-- Grid 1/12 -->
+  
+  <div class="hotpad">
+    <div class="hotcol-1-12">
+      <div class="content">hotcol-1-12</div>
+    </div>
+    <div class="hotcol-1-12">
+      <div class="content">hotcol-1-12</div>
+    </div>
+    <div class="hotcol-1-12">
+      <div class="content">hotcol-1-12</div>
+    </div>
+    <div class="hotcol-1-12">
+      <div class="content">hotcol-1-12</div>
+    </div>
+    <div class="hotcol-1-12">
+      <div class="content">hotcol-1-12</div>
+    </div>
+    <div class="hotcol-1-12">
+      <div class="content">hotcol-1-12</div>
+    </div>
+    <div class="hotcol-1-12">
+      <div class="content">hotcol-1-12</div>
+    </div>
+    <div class="hotcol-1-12">
+      <div class="content">hotcol-1-12</div>
+    </div>
+    <div class="hotcol-1-12">
+      <div class="content">hotcol-1-12</div>
+    </div>
+    <div class="hotcol-1-12">
+      <div class="content">hotcol-1-12</div>
+    </div>
+    <div class="hotcol-1-12">
+      <div class="content">hotcol-1-12</div>
+    </div>
+    <div class="hotcol-1-12">
+      <div class="content">hotcol-1-12</div>
+    </div>
+  </div>
+</div>
+<br />
+
+<!--
+========================================================================
+-->
+
+<div class="hotcontainer"> 
+  
+  <!-- 11/12 and 1/12 layout -->
+  
+  <div class="hotpad">
+    <div class="hotcol-1-12">
+      <div class="content">hotcol-1-12</div>
+    </div>
+    <div class="hotcol-11-12">
+      <div class="content">hotcol-11-12</div>
+    </div>
+  </div>
+  
+  <!-- 10/12 and 2/12 layout -->
+  
+  <div class="hotpad">
+    <div class="hotcol-2-12">
+      <div class="content">hotcol-2-12</div>
+    </div>
+    <div class="hotcol-10-12">
+      <div class="content">hotcol-10-12</div>
+    </div>
+  </div>
+  
+  <!-- 9/12 and 3/12 layout -->
+  
+  <div class="hotpad">
+    <div class="hotcol-3-12">
+      <div class="content">hotcol-3-12</div>
+    </div>
+    <div class="hotcol-9-12">
+      <div class="content">hotcol-9-12</div>
+    </div>
+  </div>
+  
+  <!-- 8/12 and 4/12 layout -->
+  
+  <div class="hotpad">
+    <div class="hotcol-4-12">
+      <div class="content">hotcol-4-12</div>
+    </div>
+    <div class="hotcol-8-12">
+      <div class="content">hotcol-8-12</div>
+    </div>
+  </div>
+  
+  <!-- 7/12 and 5/12 layout -->
+  
+  <div class="hotpad">
+    <div class="hotcol-5-12">
+      <div class="content">hotcol-5-12</div>
+    </div>
+    <div class="hotcol-7-12">
+      <div class="content">hotcol-7-12</div>
+    </div>
+  </div>
+  
+  <!-- 6/12 and 6/12 layout -->
+  
+  <div class="hotpad">
+    <div class="hotcol-6-12">
+      <div class="content">hotcol-6-12</div>
+    </div>
+    <div class="hotcol-6-12">
+      <div class="content">hotcol-6-12</div>
+    </div>
+  </div>
+  
+  <!-- 7/12 and 5/12 layout -->
+  
+  <div class="hotpad">
+    <div class="hotcol-7-12">
+      <div class="content">hotcol-7-12</div>
+    </div>
+    <div class="hotcol-5-12">
+      <div class="content">hotcol-5-12</div>
+    </div>
+  </div>
+  
+  <!-- 8/12 and 4/12 layout -->
+  
+  <div class="hotpad">
+    <div class="hotcol-8-12">
+      <div class="content">hotcol-8-12</div>
+    </div>
+    <div class="hotcol-4-12">
+      <div class="content">hotcol-4-12</div>
+    </div>
+  </div>
+  
+  <!-- 9/12 and 3/12 layout -->
+  
+  <div class="hotpad">
+    <div class="hotcol-9-12">
+      <div class="content">hotcol-9-12</div>
+    </div>
+    <div class="hotcol-3-12">
+      <div class="content">hotcol-3-12</div>
+    </div>
+  </div>
+  
+  <!-- 10/12 and 2/12 layout -->
+  
+  <div class="hotpad">
+    <div class="hotcol-10-12">
+      <div class="content">hotcol-10-12</div>
+    </div>
+    <div class="hotcol-2-12">
+      <div class="content">hotcol-2-12</div>
+    </div>
+  </div>
+  
+  <!-- 11/12 and 1/12 layout -->
+  
+  <div class="hotpad">
+    <div class="hotcol-11-12">
+      <div class="content">hotcol-11-12</div>
+    </div>
+    <div class="hotcol-1-12">
+      <div class="content">hotcol-1-12</div>
+    </div>
+  </div>
+</div>
+<br />
+
+<!--
+========================================================================
+-->
+
+<div class="hotcontainer"> 
+  
+  <!-- 11/12 layout center -->
+  
+  <div class="hotpad">
+    <div class="hotcol-11-12 center">
+      <div class="content">hotcol-11-12 center</div>
+    </div>
+  </div>
+  
+  <!-- 10/12 layout center -->
+  
+  <div class="hotpad">
+    <div class="hotcol-10-12 center">
+      <div class="content">hotcol-10-12 center</div>
+    </div>
+  </div>
+  
+  <!-- 11/12 layout center -->
+  
+  <div class="hotpad">
+    <div class="hotcol-9-12 center">
+      <div class="content">hotcol-9-12 center</div>
+    </div>
+  </div>
+  
+  <!-- 11/12 layout center -->
+  
+  <div class="hotpad">
+    <div class="hotcol-8-12 center">
+      <div class="content">hotcol-8-12 center</div>
+    </div>
+  </div>
+  
+  <!-- 11/12 layout center -->
+  
+  <div class="hotpad">
+    <div class="hotcol-7-12 center">
+      <div class="content">hotcol-7-12 center</div>
+    </div>
+  </div>
+  
+  <!-- 11/12 layout center -->
+  
+  <div class="hotpad">
+    <div class="hotcol-6-12 center">
+      <div class="content">hotcol-6-12 center</div>
+    </div>
+  </div>
+  
+  <!-- 11/12 layout center -->
+  
+  <div class="hotpad">
+    <div class="hotcol-5-12 center">
+      <div class="content">hotcol-5-12 center</div>
+    </div>
+  </div>
+  
+  <!-- 11/12 layout center -->
+  
+  <div class="hotpad">
+    <div class="hotcol-4-12 center">
+      <div class="content">hotcol-4-12 center</div>
+    </div>
+  </div>
+  
+  <!-- 11/12 layout center -->
+  
+  <div class="hotpad">
+    <div class="hotcol-3-12 center">
+      <div class="content">hotcol-3-12 center</div>
+    </div>
+  </div>
+  
+  <!-- 11/12 layout center -->
+  
+  <div class="hotpad">
+    <div class="hotcol-2-12 center">
+      <div class="content">hotcol-2-12 center</div>
+    </div>
+  </div>
+  
+  <!-- 11/12 layout center -->
+  
+  <div class="hotpad">
+    <div class="hotcol-1-12 center">
+      <div class="content">hotcol-1-12 center</div>
+    </div>
+  </div>
+</div>
+<br />
+<!--
+========================================================================
+-->
+<div class="hotcontainer"> 
+  
+  <!-- 11/12 and 1/12 layout -->
+  
+  <div class="hotpad">
+    <div class="hotcol-12-12">
+      <div class="content">hotcol-12-12 ou hotcol-1-1</div>
+    </div>    
+  </div>
+  
+  <!-- 10/12 and 2/12 layout -->
+  
+  <div class="hotpad">
+    <div class="hotcol-2-12">
+      <div class="content">hotcol-2-12</div>
+    </div>
+    <div class="hotcol-9-12 push-1-12">
+      <div class="content">hotcol-9-12 push-1-12</div>
+    </div>
+  </div>
+  
+  <!-- 9/12 and 3/12 layout -->
+  
+  <div class="hotpad">    
+    <div class="hotcol-8-12 push-3-12">
+      <div class="content">hotcol-8-12 push-3-12</div>
+    </div>
+  </div>
+  
+ 
+  
+  <!-- 6/12 and 6/12 layout -->
+  
+  <div class="hotpad">
+    <div class="hotcol-4-12">
+      <div class="content">hotcol-4-12</div>
+    </div>
+    <div class="hotcol-4-12 push-4-12">
+      <div class="content">hotcol-4-12 push-4-12</div>
+    </div>
+  </div>
+</div>
+<br>
+<!--
+========================================================================
+-->
+
+  
+  <!-- layout push pull -->
+  <div class="hotcontainer"> 
+  <div class="hotpad">
+     <div class="hotcol-11-12 center show-1920">
+        <div class="content"><p>hotcol-11-12 center show-1920</p></div>
+    </div>
+     <div class="hotcol-9-12 center show-1280">
+        <div class="content"><p>hotcol-9-12 center show-1280</p></div>
+    </div>
+     <div class="hotcol-7-12 center show-960">
+        <div class="content bg-blue"><p>hotcol-7-12 center show-960</p></div>
+    </div>
+     <div class="hotcol-5-12 center show-768">
+        <div class="content bg-red"><p>hotcol-5-12 center show-768</p></div>
+    </div>
+    <div class="hotcol-3-12 center show-480">
+        <div class="content"><p>hotcol-3-12 center show-480</p></div>
+    </div>
+  </div>
+      <br />
+  <div class="hotpad hotcol-6-12 push-6-12 hide-479 bg-green">
+      <p class="text-align-center">hotpad hotcol-6-12 push-6-12 hide-479</p>
+    <div class="hotcol-4-12 push-4-12 ">
+        <div class="content"><p>hotcol-4-12 push-4-12<br> bloco:01  </p></div>
+    </div>
+    <div class="hotcol-4-12 push-4-12">
+      <div class="content bg-blue"><p>hotcol-4-12 push-4-12<br> bloco:02 </p></div>
+    </div>
+    <div class="hotcol-4-12 pull-8-12 hide-767">
+      <div class="content bg-red"><p>hotcol-4-12 pull-8-12 hide-767<br> bloco:03 </p></div>
+    </div>   
+    <div class="hotcol-4-12 pull-8-12 show-480">
+      <div class="content bg-orange"><p>hotcol-4-12 pull-8-12 show-480<br> bloco:04 </p></div>
+    </div> 
+      
+    <div class="hotcol-1-1 ">
+      <div class="content bg-gold"><p>hotcol-1-1<br> bloco:05 </p></div>
+    </div> 
+  </div>
+      
+  <div class="hotpad hotcol-6-12 pull-6-12 bg-gold">
+      <p class="text-align-center">hotpad hotcol-6-12 pull-6-12</p>
+    <div class="hotcol-1-1 show-960 show-768">
+      <div class="content bg-green"><p>hotcol-1-1 show-960 show-768<br> bloco:01 </p></div>
+    </div> 
+    <div class="hotcol-4-12 push-4-12 ">
+        <div class="content"><p>hotcol-4-12 push-4-12<br> bloco:02 </p></div>
+    </div>
+    <div class="hotcol-4-12 push-4-12 hide-767">
+      <div class="content bg-blue"><p>hotcol-4-12 push-4-12 hide-767<br> bloco:03  </p></div>
+    </div>
+    <div class="hotcol-4-12 pull-8-12 hide-479">
+      <div class="content bg-red"><p>hotcol-4-12 pull-8-12 hide-479<br> bloco:04 </p></div>
+    </div>      
+  </div>
+</div>
+<br />
+
+<div class="hotcontainer">
+
+<div class="hotpad border-none" id="MediaQueries">
+ <h3>Media Queries</h3>   
+  <hr> 
+<p>&nbsp;/* Bigger than full-hd 1920 (devices and browsers) */<br />
+@media only screen and (min-width: 1920px) {}</p><br /><br />
+<p>/* Smaller than full-hd 1920 (devices and browsers) */<br />
+@media only screen and (max-width: 1919px) {}</p><br /><br />
+<p>/* Mediun 1280 to full-hd 1920 (devices and browsers) */<br />
+@media only screen and (min-width: 1280px) and (max-width: 1919px) {}</p><br /><br />
+<p>/* Smaller than medium 1280 (devices and browsers) */<br />
+@media only screen and (max-width: 1279px) {}</p><br /><br />
+<p>/* Standard 960 to medium 1280 (devices and browsers) */<br />
+@media only screen and (min-width: 960px) and (max-width: 1279px) {}</p><br /><br />
+<p>/* Smaller than standard 960 (devices and browsers) */<br />
+@media only screen and (max-width: 959px) {}</p><br /><br />
+<p>/* Tablet Portrait size to standard 960 (devices and browsers) */<br />
+@media only screen and (min-width: 768px) and (max-width: 959px) {}</p><br /><br />
+<p>/* All Mobile Sizes (devices and browser) */<br />
+@media only screen and (max-width: 767px) {}</p><br /><br />
+<p>/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */<br />
+@media only screen and (min-width: 480px) and (max-width: 767px) {}</p><br /><br />
+<p>/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */<br />
+@media only screen and (max-width: 479px) {}</p>
+<p>&nbsp;</p>
+</div>
+<!-- HTLM Elements
+========================================================================
+-->
+
+
+<hr>
+<h2 id="html">HTLM Elements</h2>
+<hr>
+<div class="hotpad border-none">
+
+<!-- ++++++++++++++++ IMAGENS +++++++++++++++++++  -->
+<h3>Imagens</h3>
+<hr />
+<h4>Responsive Image</h4>
+<div class="hotimage-responsive hotcol-1-3">
+    <img src="imagens/foto2.png">
+</div>
+<div class="hotimage-responsive hotcol-1-3">
+    <img src="imagens/foto2.png">
+</div>
+<div class="hotimage-responsive hotcol-1-3">
+    <img src="imagens/foto2.png">
+</div>
+<div class="padding-20px"></div>
+
+<h4>Imagens 360º</h4>
+<img src="imagens/foto.png" class="hotimgcircle">
+
+<h4>Imagens List Hover Title Responsive</h4>
+ <div class="hotcol-1-1">
+    
+    <!-- Define all of the tiles: -->
+    <div class="HotListImg">
+      <div class="HotListInner">
+        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/7.jpg" />
+        <div class="titleHotList">Butterfly</div>
+      </div>
+    </div>
+    <div class="HotListImg">
+      <div class="HotListInner">
+        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/1.jpg" />
+        <div class="titleHotList">An old greenhouse</div>
+      </div>
+    </div>
+    <div class="HotListImg">
+      <div class="HotListInner">
+        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/2.jpg" />
+        <div class="titleHotList">Purple wildflowers</div>
+      </div>
+    </div>
+    <div class="HotListImg">
+      <div class="HotListInner">
+        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/3.jpg" />
+        <div class="titleHotList">A birdfeeder</div>
+      </div>
+    </div>
+    <div class="HotListImg">
+      <div class="HotListInner">
+        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/10.jpg" />
+        <div class="titleHotList">Crocus close-up</div>
+      </div>
+    </div>
+    <div class="HotListImg">
+      <div class="HotListInner">
+        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/4.jpg" />
+        <div class="titleHotList">The garden shop</div>
+      </div>
+    </div>
+    <div class="HotListImg">
+      <div class="HotListInner">
+        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/5.jpg" />
+        <div class="titleHotList">Spring daffodils</div>
+      </div>
+    </div>
+    <div class="HotListImg">
+      <div class="HotListInner">
+        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/6.jpg" />
+        <div class="titleHotList">Iris along the path</div>
+      </div>
+    </div>
+    <div class="HotListImg">
+      <div class="HotListInner">
+        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/8.jpg" />
+        <div class="titleHotList">The garden blueprint</div>
+      </div>
+    </div>
+    <div class="HotListImg">
+      <div class="HotListInner">
+        <img src="http://www.dwuser.com/education/content/creating-responsive-tiled-layout-with-pure-css/images/demo/9.jpg" />
+        <div class="titleHotList">The patio</div>
+      </div>
+    </div>
+    
+  </div>
+  <!-- /#wrap -->
+    
+<!-- ++++++++++++++++ ALERTS +++++++++++++++++++  -->
+<h3> Alerts</h3>   
+<hr>   
+<div class="hotalert-success"><strong>Mussum ipsum cacilds!</strong> Vidis litro abertis. Consetis adipiscings elitis.<br>class=hotalert-success </div>
+<div class="hotalert-error"><strong>Mussum ipsum cacilds!</strong> Vidis litro abertis. Consetis adipiscings elitis.<br>class=hotalert-error </div>
+<div class="hotalert-warning"><strong>Mussum ipsum cacilds!</strong> Vidis litro abertis. Consetis adipiscings elitis.<br>class=hotalert-warning </div>
+<div class="hotalert-info"><strong>Mussum ipsum cacilds!</strong> Vidis litro abertis. Consetis adipiscings elitis.<br>hotalert-info </div>
+
+
+<!-- ++++++++++++++++ BUTTONS +++++++++++++++++++  -->
+<h3> Buttons</h3>   
+<hr>  
+<div class="hotpad border-none hotcol-10-12 center">
+
+<a class="hotbutton" href="#">A Pure Button</a>
+<button class="hotbutton">A Pure Button</button>
+    
+</div>
+
+
+<div class=" hotpad border-none hotcol-10-12 center">
+    
+<a class="hotbutton hotbutton-active" href="#">An Active Button</a>
+<button class="hotbutton hotbutton-active">An Active Button</button>
+
+</div>
+
+<div class="hotpad border-none hotcol-10-12 center">
+    
+<a class="hotbutton hotbutton-disabled" href="#">A Disabled Button</a>
+<button class="hotbutton hotbutton-disabled">A Disabled Button</button>
+    
+</div>
+
+<div class="hotpad border-none hotcol-10-12 center"></div>
+
+<div class="hotpad border-none hotcol-10-12 center">
+    
+<a class="hotbutton hotbutton-primary" href="#">A Primary Button</a>
+<button class="hotbutton hotbutton-primary">A Primary Button</button>
+    
+</div>
+
+<div class="hotpad border-none hotcol-10-12 center">
+    
+    <button class="hotbutton hotbutton-success">Success Button</button>
+    <button class="hotbutton hotbutton-error">Error Button</button>
+    <button class="hotbutton hotbutton-warning">Warning Button</button>
+    <button class="hotbutton hotbutton-secondary">Secondary Button</button>
+    
+</div>
+
+<div class="hotpad border-none hotcol-10-12 center">
+    
+    <button class="hotbutton hotbutton-xsmall">Extra Small Button</button>
+    <button class="hotbutton hotbutton-small">Small Button</button>
+    <button class="hotbutton">Regular Button</button>
+    <button class="hotbutton hotbutton-large">Large Button</button>
+    <button class="hotbutton hotbutton-xlarge">Extra Large Button</button>
+    
+</div>
+
+<div class="hotpad border-none hotcol-10-12 center">
+    
+<button class="hotbutton">
+    <i class="icon-cog"></i>
+    Settings
+</button>
+
+<a class="hotbutton" href="#">
+    <i class="icon-shopping-cart icon-large"></i>
+    Checkout
+</a>
+    
+</div>
+
+<div class="hotpad border-none hotcol-10-12 center"></div>
+<!-- ++++++++++++++++ FORMS +++++++++++++++++++  -->
+<h3> Form</h3>   
+<hr>  
+<div class="hotpad border-none hotcol-8-12 center">   
+  
+   <form class="hotform">
+    <fieldset>
+        <legend>A compact inline form</legend>
+
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+
+        <label for="remember">
+            <input id="remember" type="checkbox"> Remember me
+        </label>
+
+        <button type="submit" class="hotbutton hotbutton-primary">Sign in</button>
+    </fieldset>
+</form>   
+</div>
+
+
+<div class="hotpad border-none hotcol-8-12 center"> 
+  
+<form class="hotpad border-none hotform hotform-stacked">
+    <fieldset>
+        <legend>A Stacked Form</legend>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Email">
+
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Password">
+
+        <label for="state">State</label>
+        <select id="state">
+            <option>AL</option>
+            <option>CA</option>
+            <option>IL</option>
+        </select>
+
+        <label for="remember" class="hotcheckbox">
+            <input id="remember" type="checkbox"> Remember me
+        </label>
+
+        <button type="submit" class="hotbutton hotbutton-primary">Sign in</button>
+    </fieldset>
+</form>
+</div>
+
+
+<div class="hotpad border-none hotcol-8-12 center"> 
+<form class="hotform hotform-aligned">
+    <fieldset>
+         <legend>Aligned Form</legend>
+        <div class="hotcontrol-group">
+            <label for="name">Username</label>
+            <input id="name" type="text" placeholder="Username">
+        </div>
+
+        <div class="hotcontrol-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Password">
+        </div>
+
+        <div class="hotcontrol-group">
+            <label for="email">Email Address</label>
+            <input id="email" type="email" placeholder="Email Address">
+        </div>
+
+        <div class="hotcontrol-group">
+            <label for="foo">Supercalifragilistic Label</label>
+            <input id="foo" type="text" placeholder="Enter something here...">
+        </div>
+
+        <div class="hotcontrols">
+            <label for="cb" class="hotcheckbox">
+                <input id="cb" type="checkbox"> I've read the terms and conditions
+            </label>
+
+            <button type="submit" class="hotbutton hotbutton-primary">Submit</button>
+        </div>
+    </fieldset>
+</form>     
+</div>  
+<div>
+    
+    <form class="hotform"> 
+        
+<input class="hotinput-1" type="text" placeholder="hotinput-1"><br>
+<input class="hotinput-3-4" type="text" placeholder="hotinput-3-4"><br>
+<input class="hotinput-2-3" type="text" placeholder="hotinput-2-3"><br>
+<input class="hotinput-1-2" type="text" placeholder="hotinput-1-2"><input class="hotinput-1-2" type="text" placeholder="hotinput-1-2"><br>
+<input class="hotinput-1-3" type="text" placeholder="hotinput-1-3"><br>
+<input class="hotinput-1-4" type="text" placeholder="hotinput-1-4"><br>
+</form></div>
+<br />
+<!-- ++++++++++++++++ TABLES +++++++++++++++++++  -->
+<h3>Table</h3>    
+<hr />
+<div class="hotcol-10-12 center">
+   
+   <h4>No responsive table class="hottable"</h4>
+   <hr />
+   <table class="hottable">
+		<thead>
+			<tr>
+				<th>Selector</th>
+				<th>IE7</th>
+				<th>IE8</th>
+				<th>IE9</th>
+				<th>FF 3.6</th>
+				<th>FF 4</th>
+				<th>Safari 5</th>
+				<th>Chrome 5</th>
+				<th>Opera 10</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>* selector</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+			</tr><tr>
+				<td>:before :after</td>
+				<td>no</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+			</tr><tr>
+				<td>:nth-of-type()</td>
+				<td>no</td>
+				<td>no</td>
+				<td>no</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>incorrect</td>
+			</tr><tr>
+				<td>background-clip</td>
+				<td>no</td>
+				<td>no</td>
+				<td>yes</td>
+				<td>no</td>
+				<td>yes</td>
+				<td>-webkit-</td>
+				<td>-webkit-</td>
+				<td>buggy</td>
+			</tr><tr>
+				<td>background-repeat</td>
+				<td>incomplete</td>
+				<td>incomplete</td>
+				<td>yes</td>
+				<td>incomplete</td>
+				<td>incomplete</td>
+				<td>incorrect</td>
+				<td>incorrect</td>
+				<td>yes</td>
+			</tr><tr>
+				<td>::selection</td>
+				<td>no</td>
+				<td>no</td>
+				<td>yes</td>
+				<td>-moz-</td>
+				<td>-moz-</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+			</tr>
+		</tbody>
+	</table><br /><br /><br />
+    <h4>Responsive overflow table class="hottable table-overflow"</h4>
+   <hr />
+
+
+   <table class="hottable table-overflow">
+		<thead>
+			<tr>
+				<th>Selector</th>
+				<th>IE7</th>
+				<th>IE8</th>
+				<th>IE9</th>
+				<th>FF 3.6</th>
+				<th>FF 4</th>
+				<th>Safari 5</th>
+				<th>Chrome 5</th>
+				<th>Opera 10</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>* selector</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+			</tr><tr>
+				<td>:before :after</td>
+				<td>no</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+			</tr><tr>
+				<td>:nth-of-type()</td>
+				<td>no</td>
+				<td>no</td>
+				<td>no</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>incorrect</td>
+			</tr><tr>
+				<td>background-clip</td>
+				<td>no</td>
+				<td>no</td>
+				<td>yes</td>
+				<td>no</td>
+				<td>yes</td>
+				<td>-webkit-</td>
+				<td>-webkit-</td>
+				<td>buggy</td>
+			</tr><tr>
+				<td>background-repeat</td>
+				<td>incomplete</td>
+				<td>incomplete</td>
+				<td>yes</td>
+				<td>incomplete</td>
+				<td>incomplete</td>
+				<td>incorrect</td>
+				<td>incorrect</td>
+				<td>yes</td>
+			</tr><tr>
+				<td>::selection</td>
+				<td>no</td>
+				<td>no</td>
+				<td>yes</td>
+				<td>-moz-</td>
+				<td>-moz-</td>
+				<td>yes</td>
+				<td>yes</td>
+				<td>yes</td>
+			</tr>
+		</tbody>
+	</table>
+
+   
+</div>
+</div>
+</div>
+    <br />
+
+<!-- Menus
+========================================================================
+-->
+    
+<div class="hotcontainer">
+  <hr />
+  <h2 id="icon-fontes">Menus </h2>
+  <hr />
+  
+<div class="hotpad border-none">
+<!-- ++++++++++++++++ hotmenu +++++++++++++++++++  -->
+<h3 id="menu">Toggle Menu</h3>
+<hr />
+    
+    <a class="togglemenu" href="#hotmenu"><i class="icon-reorder"></i></a>		
+    <nav id="hotmenu" class="hotmenu">
+        <ul>
+            <li class="li-submenu"><a href="#">Grid</a>
+                    <ul class="ul-submenu">
+                             <li><a href="#">HotGrid</a></li>
+                             <li class="li-submenu">
+                                    <a href="#">Batting Cages</a>
+                                    <ul>
+                                            <li><a href="#">Indoor</a></li>
+                                            <li><a href="#">Outdoor</a></li>
+                                    </ul>
+                             </li>                             
+                             <li><a href="#">Padding</a></li>
+                             <li><a href="#">Scoreboards</a></li>
+                             <li><a href="#">Shade Structures</a></li>
+                    </ul>
+            </li>
+            <li class="li-submenu"><a href="#">Field Maintenance</a>
+                    <ul class="ul-submenu">
+                            <li><a href="#">All-in-One Team Cart</a></li>
+                            <li><a href="#">Air &amp; Electrical Reels</a></li>
+                             <li><a href="#">Field Drags</a></li>
+                             <li class="li-submenu">
+                                    <a href="#">Field Marking Equipment</a>
+                                    <ul>
+                                            <li><a href="#">Batter's Box Templates</a></li>
+                                            <li><a href="#">Dryline Markers</a></li>
+                                            <li><a href="#">Field Paint</a></li>
+                                            <li><a href="#">Field Sprayers</a></li>
+                                            <li><a href="#">Stencils</a></li>
+                                    </ul>
+                             </li>
+                             <li class="li-submenu">
+                                    <a href="#">Field Tarps</a>
+                                    <ul>
+                                            <li><a href="#">Area Tarps</a></li>
+                                            <li><a href="#">Growth Covers / Protectors</a></li>
+                                            <li><a href="#">Infield Tarps</a></li>
+                                            <li><a href="#">Tarp Accessories</a></li>
+                                    </ul>
+                             </li>
+                             <li><a href="#">Hand Tools</a></li>
+                             <li class="li-submenu">
+                                    <a href="#">Irrigation, Hoses, Nozzles</a>
+                                    <ul>
+                                            <li><a href="#">Hoses &amp; Hose Reels</a></li>
+                                            <li><a href="#">Irrigation</a></li>
+                                            <li><a href="#">Nozzles</a></li>
+                                    </ul>
+                             </li>
+                             <li><a href="#">Layout &amp; Measurement Tools</a></li>
+                             <li><a href="#">Moisture Removal</a></li>
+                             <li><a href="#">Mound &amp; Home Plate Fortification</a></li>
+                             <li><a href="#">Mowers &amp; Stripers</a></li>                             
+                             <li><a href="#"> - VIEW ALL - </a></li>
+                    </ul>
+            </li>
+            <li class="li-submenu"><a href="#">Game-Practice Equipment</a>
+                    <ul class="ul-submenu">
+                             <li class="li-submenu">
+                                    <a href="#">Baseball - Softball</a>
+                                    <ul>
+                                            <li><a href="#">Base Accessories</a></li>
+                                            <li><a href="#">Bases &amp; Home Plates</a></li>
+                                            <li><a href="#">Game Accessories</a></li>
+                                            <li><a href="#">Pitching Rubbers</a></li>
+                                    </ul>
+                             </li>
+                             <li class="li-submenu">
+                                    <a href="#">Batting Practice Equipment</a>
+                                    <ul>
+                                            <li><a href="#">Backstops</a></li>
+                                            <li><a href="#">Infield Screens</a></li>
+                                            <li><a href="#">Jugs Pitching Machines</a></li>
+                                            <li><a href="#">Turf Mats</a></li>                                       
+                                    </ul>
+                             </li>
+                             <li class="li-submenu">
+                                    <a href="#">Batting Cages</a>
+                                    <ul>
+                                            <li><a href="#">Indoor</a></li>
+                                            <li><a href="#">Outdoor</a></li>
+                                    </ul>
+                             </li>
+                             <li class="li-submenu">
+                                    <a href="#">Portable Mounds</a>
+                                    <ul>
+                                            <li><a href="#">Batting Practice Mounds</a></li>
+                                            <li><a href="#">Game Mounds</a></li>
+                                            <li><a href="#">Practice Mounds</a></li>
+                                    </ul>
+                             </li>
+                             <li class="li-submenu">
+                                    <a href="#">Football</a>
+                                    <ul>
+                                            <li><a href="#">First Down Markers</a></li>
+                                            <li><a href="#">Football Accessories</a></li>
+                                            <li><a href="#">Football Goalposts</a></li>
+                                    </ul>
+                             </li>
+                             <li class="li-submenu">
+                                    <a href="#">Soccer</a>
+                                    <ul>
+                                            <li><a href="#">Soccer Goals</a></li>
+                                            <li><a href="#">Soccer Accessories</a></li>
+                                    </ul>
+                             </li>
+
+                    </ul>
+            </li>
+            <li class="li-submenu"><a href="#">Training &amp; Conditioning</a>
+                    <ul class="ul-submenu">
+                             <li><a href="#">Ladders &amp; Sticks</a></li>
+                             <li><a href="#">Hurdles</a></li>
+                             <li><a href="#">Training Accessories</a></li>
+                             <li><a href="#">Smart-Cart Training System</a></li>                          
+                    </ul>
+            </li>
+            <li class="li-submenu"><a href="#">Books-Videos</a>
+                    <ul class="ul-submenu">
+                             <li><a href="#">Field Design &amp; Maintenance</a></li>
+                             <li><a href="#">Turf Management</a></li>
+                             <li><a href="#">Training</a></li>
+                             <li><a href="#"> - VIEW ALL - </a></li>
+                    </ul>
+            </li>
+    </ul>
+    </nav>
+   
+</div>
+
+<!-- ++++++++++++++++ hotcrumb +++++++++++++++++++  -->
+<div class="hotpad border-none">
+<h3 id="hotcrumb">hotcrumb</h3>
+<hr />
+<p>ol, ul class="hotcrumb", li class= active</p>
+
+    <ul class="hotcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Library</a></li>
+      <li class="active">Data</li>
+    </ul>
+
+<!-- ++++++++++++++++ step track +++++++++++++++++++  -->
+
+<h3 id="hotstep">hotstep</h3>
+<hr />
+<p>ol  class="hotstep hotstep-steps-6"  </p>
+ 
+<ol class="hotstep hotstep-steps-6">
+    <li class="hotstep-done">step 01</li>
+ <li class="hotstep-done">step 02</li>
+ <li class="hotstep-done">step 03</li>
+ <li class="hotstep-done">step 04</li>
+ <li class="hotstep-done">step 05</li>
+ <li class="hotstep-todo">End !</li>
+</ol>
+
+
+
+
+
+<br>
+</div>
+</div>
+
+<!-- UI Kit
+========================================================================
+-->
+    
+<div class="hotcontainer">
+<hr />
+<h2 id="icon-fontes">Jquery UI custom </h2>
+<hr />
+<div class="hotpad border-none">  
+
+<!-- ++++++++++++++++ ACCORDION +++++++++++++++++++  -->
+<h3>Accordion</h3>    
+<hr /> 
+<div id="accordion">
+  <h3>Section 1</h3>
+  <div>
+    <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
+  </div>
+  <h3>Section 2</h3>
+  <div>
+    <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
+  </div>
+  <h3>Section 3</h3>
+  <div>
+    <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui. </p>
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+  </div>
+  <h3>Section 4</h3>
+  <div>
+    <p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est. </p><p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+  </div>
+</div>
+<!-- ++++++++++++++++ Multi ACCORDION +++++++++++++++++++  -->
+<h3>Toggle Panels</h3>    
+<hr /> 
+
+	<div id="togglepanel">
+		<h3>tab 1</h3>
+		<div>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+		<h3>tab 2</h3>
+		<div>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu mauris nulla, at cursus nulla. Morbi venenatis, risus sit amet ultricies pharetra, lorem purus tempor risus, vel tincidunt lectus nisi sit amet neque. Aenean sit amet nibh orci, a gravida eros. Pellentesque dignissim, libero eu congue semper, mauris metus molestie nisi, vitae posuere felis leo ac lectus. Mauris a nisi eget sapien varius eleifend vel vel nibh. In placerat commodo blandit. Vivamus sagittis ante sed nisl sodales id luctus diam dapibus. Proin a felis tristique nulla rhoncus sollicitudin. Nullam sit amet neque augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce at nisi sapien.
+		</div>
+		<h3>tab 3</h3>
+		<div>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+		<h3>tab 4</h3>
+		<div>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu mauris nulla, at cursus nulla. Morbi venenatis, risus sit amet ultricies pharetra, lorem purus tempor risus, vel tincidunt lectus nisi sit amet neque. Aenean sit amet nibh orci, a gravida eros. Pellentesque dignissim, libero eu congue semper, mauris metus molestie nisi, vitae posuere felis leo ac lectus. Mauris a nisi eget sapien varius eleifend vel vel nibh. In placerat commodo blandit. Vivamus sagittis ante sed nisl sodales id luctus diam dapibus. Proin a felis tristique nulla rhoncus sollicitudin. Nullam sit amet neque augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce at nisi sapien.
+		</div>
+	</div>
+
+    
+<!-- ++++++++++++++++ TAB +++++++++++++++++++  -->
+<h3>Jquery UI Responsive Tabs</h3>    
+<hr />   
+<p>div class="hottabs"  </p>
+<div id="tabs" class="hottabs" >
+  <ul>
+    <li><a href="#tabs-1">Nunc tincidunt</a></li>
+    <li><a href="#tabs-2">Proin dolor</a></li>
+    <li><a href="#tabs-3">Aenean lacinia</a></li>
+  </ul>
+  <div id="tabs-1">
+    <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+  </div>
+  <div id="tabs-2">
+    <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+  </div>
+  <div id="tabs-3">
+    <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+    <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+  </div>
+</div>
+ 
+
+
+
+
+
+</div>
+</div>
+<br>
+<!-- ++++++++++++++++ ICONS FONT AWESOME +++++++++++++++++++  -->
+
+<div class="hotcontainer">
+<hr />
+<h2 id="icon-fontes">Icon Fontes</h2>
+<hr />
+  <div class="hotpad border-none">
+    
+    <h3>New Icons in 3.2</h3>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/compass"><i class="icon-compass"></i> icon-compass</a></div>
+      <div class="span3"><a href="../icon/collapse"><i class="icon-collapse"></i> icon-collapse</a></div>
+      <div class="span3"><a href="../icon/collapse-top"><i class="icon-collapse-top"></i> icon-collapse-top</a></div>
+      <div class="span3"><a href="../icon/expand"><i class="icon-expand"></i> icon-expand</a></div>
+      <div class="span3"><a href="../icon/eur"><i class="icon-eur"></i> icon-eur</a></div>
+      <div class="span3"><a href="../icon/eur"><i class="icon-euro"></i> icon-euro <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/gbp"><i class="icon-gbp"></i> icon-gbp</a></div>
+      <div class="span3"><a href="../icon/usd"><i class="icon-usd"></i> icon-usd</a></div>
+      <div class="span3"><a href="../icon/usd"><i class="icon-dollar"></i> icon-dollar <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/inr"><i class="icon-inr"></i> icon-inr</a></div>
+      <div class="span3"><a href="../icon/inr"><i class="icon-rupee"></i> icon-rupee <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/jpy"><i class="icon-jpy"></i> icon-jpy</a></div>
+      <div class="span3"><a href="../icon/jpy"><i class="icon-yen"></i> icon-yen <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/cny"><i class="icon-cny"></i> icon-cny</a></div>
+      <div class="span3"><a href="../icon/cny"><i class="icon-renminbi"></i> icon-renminbi <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/btc"><i class="icon-btc"></i> icon-btc</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/btc"><i class="icon-bitcoin"></i> icon-bitcoin <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/file"><i class="icon-file"></i> icon-file</a></div>
+      <div class="span3"><a href="../icon/file-text"><i class="icon-file-text"></i> icon-file-text</a></div>
+      <div class="span3"><a href="../icon/sort-by-alphabet"><i class="icon-sort-by-alphabet"></i> icon-sort-by-alphabet</a></div>
+      <div class="span3"><a href="../icon/sort-by-alphabet-alt"><i class="icon-sort-by-alphabet-alt"></i> icon-sort-by-alphabet-alt</a></div>
+      <div class="span3"><a href="../icon/sort-by-attributes"><i class="icon-sort-by-attributes"></i> icon-sort-by-attributes</a></div>
+      <div class="span3"><a href="../icon/sort-by-attributes-alt"><i class="icon-sort-by-attributes-alt"></i> icon-sort-by-attributes-alt</a></div>
+      <div class="span3"><a href="../icon/sort-by-order"><i class="icon-sort-by-order"></i> icon-sort-by-order</a></div>
+      <div class="span3"><a href="../icon/sort-by-order-alt"><i class="icon-sort-by-order-alt"></i> icon-sort-by-order-alt</a></div>
+      <div class="span3"><a href="../icon/thumbs-up"><i class="icon-thumbs-up"></i> icon-thumbs-up</a></div>
+      <div class="span3"><a href="../icon/thumbs-down"><i class="icon-thumbs-down"></i> icon-thumbs-down</a></div>
+      <div class="span3"><a href="../icon/youtube-sign"><i class="icon-youtube-sign"></i> icon-youtube-sign</a></div>
+      <div class="span3"><a href="../icon/youtube"><i class="icon-youtube"></i> icon-youtube</a></div>
+      <div class="span3"><a href="../icon/youtube-play"><i class="icon-youtube-play"></i> icon-youtube-play</a></div>
+      <div class="span3"><a href="../icon/xing"><i class="icon-xing"></i> icon-xing</a></div>
+      <div class="span3"><a href="../icon/xing-sign"><i class="icon-xing-sign"></i> icon-xing-sign</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/dropbox"><i class="icon-dropbox"></i> icon-dropbox</a></div>
+      <div class="span3"><a href="../icon/stackexchange"><i class="icon-stackexchange"></i> icon-stackexchange</a></div>
+      <div class="span3"><a href="../icon/instagram"><i class="icon-instagram"></i> icon-instagram</a></div>
+      <div class="span3"><a href="../icon/flickr"><i class="icon-flickr"></i> icon-flickr</a></div>
+      <div class="span3"><a href="../icon/adn"><i class="icon-adn"></i> icon-adn</a></div>
+      <div class="span3"><a href="../icon/bitbucket"><i class="icon-bitbucket"></i> icon-bitbucket</a></div>
+      <div class="span3"><a href="../icon/bitbucket-sign"><i class="icon-bitbucket-sign"></i> icon-bitbucket-sign</a></div>
+      <div class="span3"><a href="../icon/tumblr"><i class="icon-tumblr"></i> icon-tumblr</a></div>
+      <div class="span3"><a href="../icon/tumblr-sign"><i class="icon-tumblr-sign"></i> icon-tumblr-sign</a></div>
+      <div class="span3"><a href="../icon/long-arrow-down"><i class="icon-long-arrow-down"></i> icon-long-arrow-down</a></div>
+      <div class="span3"><a href="../icon/long-arrow-up"><i class="icon-long-arrow-up"></i> icon-long-arrow-up</a></div>
+      <div class="span3"><a href="../icon/long-arrow-left"><i class="icon-long-arrow-left"></i> icon-long-arrow-left</a></div>
+      <div class="span3"><a href="../icon/long-arrow-right"><i class="icon-long-arrow-right"></i> icon-long-arrow-right</a></div>
+      <div class="span3"><a href="../icon/apple"><i class="icon-apple"></i> icon-apple</a></div>
+      <div class="span3"><a href="../icon/windows"><i class="icon-windows"></i> icon-windows</a></div>
+      <div class="span3"><a href="../icon/android"><i class="icon-android"></i> icon-android</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/linux"><i class="icon-linux"></i> icon-linux</a></div>
+      <div class="span3"><a href="../icon/dribbble"><i class="icon-dribbble"></i> icon-dribbble</a></div>
+      <div class="span3"><a href="../icon/skype"><i class="icon-skype"></i> icon-skype</a></div>
+      <div class="span3"><a href="../icon/foursquare"><i class="icon-foursquare"></i> icon-foursquare</a></div>
+      <div class="span3"><a href="../icon/trello"><i class="icon-trello"></i> icon-trello</a></div>
+      <div class="span3"><a href="../icon/female"><i class="icon-female"></i> icon-female</a></div>
+      <div class="span3"><a href="../icon/male"><i class="icon-male"></i> icon-male</a></div>
+      <div class="span3"><a href="../icon/gittip"><i class="icon-gittip"></i> icon-gittip</a></div>
+      <div class="span3"><a href="../icon/sun"><i class="icon-sun"></i> icon-sun</a></div>
+      <div class="span3"><a href="../icon/moon"><i class="icon-moon"></i> icon-moon</a></div>
+      <div class="span3"><a href="../icon/archive"><i class="icon-archive"></i> icon-archive</a></div>
+      <div class="span3"><a href="../icon/bug"><i class="icon-bug"></i> icon-bug</a></div>
+      <div class="span3"><a href="../icon/vk"><i class="icon-vk"></i> icon-vk</a></div>
+      <div class="span3"><a href="../icon/weibo"><i class="icon-weibo"></i> icon-weibo</a></div>
+      <div class="span3"><a href="../icon/renren"><i class="icon-renren"></i> icon-renren</a></div>
+      <div class="span3"><a href="../icon/krw"><i class="icon-won"></i> icon-won <span class="muted">(alias)</span></a></div>
+    </div>
+  </div>
+  <div class="hotpad border-none">
+    <h3>Web Application Icons</h3>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/adjust"><i class="icon-adjust"></i> icon-adjust</a></div>
+      <div class="span3"><a href="../icon/anchor"><i class="icon-anchor"></i> icon-anchor</a></div>
+      <div class="span3"><a href="../icon/archive"><i class="icon-archive"></i> icon-archive</a></div>
+      <div class="span3"><a href="../icon/asterisk"><i class="icon-asterisk"></i> icon-asterisk</a></div>
+      <div class="span3"><a href="../icon/ban-circle"><i class="icon-ban-circle"></i> icon-ban-circle</a></div>
+      <div class="span3"><a href="../icon/bar-chart"><i class="icon-bar-chart"></i> icon-bar-chart</a></div>
+      <div class="span3"><a href="../icon/barcode"><i class="icon-barcode"></i> icon-barcode</a></div>
+      <div class="span3"><a href="../icon/beaker"><i class="icon-beaker"></i> icon-beaker</a></div>
+      <div class="span3"><a href="../icon/beer"><i class="icon-beer"></i> icon-beer</a></div>
+      <div class="span3"><a href="../icon/bell"><i class="icon-bell"></i> icon-bell</a></div>
+      <div class="span3"><a href="../icon/bell-alt"><i class="icon-bell-alt"></i> icon-bell-alt</a></div>
+      <div class="span3"><a href="../icon/bolt"><i class="icon-bolt"></i> icon-bolt</a></div>
+      <div class="span3"><a href="../icon/book"><i class="icon-book"></i> icon-book</a></div>
+      <div class="span3"><a href="../icon/bookmark"><i class="icon-bookmark"></i> icon-bookmark</a></div>
+      <div class="span3"><a href="../icon/bookmark-empty"><i class="icon-bookmark-empty"></i> icon-bookmark-empty</a></div>
+      <div class="span3"><a href="../icon/briefcase"><i class="icon-briefcase"></i> icon-briefcase</a></div>
+      <div class="span3"><a href="../icon/bug"><i class="icon-bug"></i> icon-bug</a></div>
+      <div class="span3"><a href="../icon/building"><i class="icon-building"></i> icon-building</a></div>
+      <div class="span3"><a href="../icon/bullhorn"><i class="icon-bullhorn"></i> icon-bullhorn</a></div>
+      <div class="span3"><a href="../icon/bullseye"><i class="icon-bullseye"></i> icon-bullseye</a></div>
+      <div class="span3"><a href="../icon/calendar"><i class="icon-calendar"></i> icon-calendar</a></div>
+      <div class="span3"><a href="../icon/calendar-empty"><i class="icon-calendar-empty"></i> icon-calendar-empty</a></div>
+      <div class="span3"><a href="../icon/camera"><i class="icon-camera"></i> icon-camera</a></div>
+      <div class="span3"><a href="../icon/camera-retro"><i class="icon-camera-retro"></i> icon-camera-retro</a></div>
+      <div class="span3"><a href="../icon/certificate"><i class="icon-certificate"></i> icon-certificate</a></div>
+      <div class="span3"><a href="../icon/check"><i class="icon-check"></i> icon-check</a></div>
+      <div class="span3"><a href="../icon/check-empty"><i class="icon-check-empty"></i> icon-check-empty</a></div>
+      <div class="span3"><a href="../icon/check-minus"><i class="icon-check-minus"></i> icon-check-minus</a></div>
+      <div class="span3"><a href="../icon/check-sign"><i class="icon-check-sign"></i> icon-check-sign</a></div>
+      <div class="span3"><a href="../icon/circle"><i class="icon-circle"></i> icon-circle</a></div>
+      <div class="span3"><a href="../icon/circle-blank"><i class="icon-circle-blank"></i> icon-circle-blank</a></div>
+      <div class="span3"><a href="../icon/cloud"><i class="icon-cloud"></i> icon-cloud</a></div>
+      <div class="span3"><a href="../icon/cloud-download"><i class="icon-cloud-download"></i> icon-cloud-download</a></div>
+      <div class="span3"><a href="../icon/cloud-upload"><i class="icon-cloud-upload"></i> icon-cloud-upload</a></div>
+      <div class="span3"><a href="../icon/code"><i class="icon-code"></i> icon-code</a></div>
+      <div class="span3"><a href="../icon/code-fork"><i class="icon-code-fork"></i> icon-code-fork</a></div>
+      <div class="span3"><a href="../icon/coffee"><i class="icon-coffee"></i> icon-coffee</a></div>
+      <div class="span3"><a href="../icon/cog"><i class="icon-cog"></i> icon-cog</a></div>
+      <div class="span3"><a href="../icon/cogs"><i class="icon-cogs"></i> icon-cogs</a></div>
+      <div class="span3"><a href="../icon/collapse"><i class="icon-collapse"></i> icon-collapse</a></div>
+      <div class="span3"><a href="../icon/collapse-alt"><i class="icon-collapse-alt"></i> icon-collapse-alt</a></div>
+      <div class="span3"><a href="../icon/collapse-top"><i class="icon-collapse-top"></i> icon-collapse-top</a></div>
+      <div class="span3"><a href="../icon/comment"><i class="icon-comment"></i> icon-comment</a></div>
+      <div class="span3"><a href="../icon/comment-alt"><i class="icon-comment-alt"></i> icon-comment-alt</a></div>
+      <div class="span3"><a href="../icon/comments"><i class="icon-comments"></i> icon-comments</a></div>
+      <div class="span3"><a href="../icon/comments-alt"><i class="icon-comments-alt"></i> icon-comments-alt</a></div>
+      <div class="span3"><a href="../icon/compass"><i class="icon-compass"></i> icon-compass</a></div>
+      <div class="span3"><a href="../icon/credit-card"><i class="icon-credit-card"></i> icon-credit-card</a></div>
+      <div class="span3"><a href="../icon/crop"><i class="icon-crop"></i> icon-crop</a></div>
+      <div class="span3"><a href="../icon/dashboard"><i class="icon-dashboard"></i> icon-dashboard</a></div>
+      <div class="span3"><a href="../icon/desktop"><i class="icon-desktop"></i> icon-desktop</a></div>
+      <div class="span3"><a href="../icon/download"><i class="icon-download"></i> icon-download</a></div>
+      <div class="span3"><a href="../icon/download-alt"><i class="icon-download-alt"></i> icon-download-alt</a></div>
+      <div class="span3"><a href="../icon/edit"><i class="icon-edit"></i> icon-edit</a></div>
+      <div class="span3"><a href="../icon/edit-sign"><i class="icon-edit-sign"></i> icon-edit-sign</a></div>
+      <div class="span3"><a href="../icon/ellipsis-horizontal"><i class="icon-ellipsis-horizontal"></i> icon-ellipsis-horizontal</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/ellipsis-vertical"><i class="icon-ellipsis-vertical"></i> icon-ellipsis-vertical</a></div>
+      <div class="span3"><a href="../icon/envelope"><i class="icon-envelope"></i> icon-envelope</a></div>
+      <div class="span3"><a href="../icon/envelope-alt"><i class="icon-envelope-alt"></i> icon-envelope-alt</a></div>
+      <div class="span3"><a href="../icon/eraser"><i class="icon-eraser"></i> icon-eraser</a></div>
+      <div class="span3"><a href="../icon/exchange"><i class="icon-exchange"></i> icon-exchange</a></div>
+      <div class="span3"><a href="../icon/exclamation"><i class="icon-exclamation"></i> icon-exclamation</a></div>
+      <div class="span3"><a href="../icon/exclamation-sign"><i class="icon-exclamation-sign"></i> icon-exclamation-sign</a></div>
+      <div class="span3"><a href="../icon/expand"><i class="icon-expand"></i> icon-expand</a></div>
+      <div class="span3"><a href="../icon/expand-alt"><i class="icon-expand-alt"></i> icon-expand-alt</a></div>
+      <div class="span3"><a href="../icon/external-link"><i class="icon-external-link"></i> icon-external-link</a></div>
+      <div class="span3"><a href="../icon/external-link-sign"><i class="icon-external-link-sign"></i> icon-external-link-sign</a></div>
+      <div class="span3"><a href="../icon/eye-close"><i class="icon-eye-close"></i> icon-eye-close</a></div>
+      <div class="span3"><a href="../icon/eye-open"><i class="icon-eye-open"></i> icon-eye-open</a></div>
+      <div class="span3"><a href="../icon/facetime-video"><i class="icon-facetime-video"></i> icon-facetime-video</a></div>
+      <div class="span3"><a href="../icon/female"><i class="icon-female"></i> icon-female</a></div>
+      <div class="span3"><a href="../icon/fighter-jet"><i class="icon-fighter-jet"></i> icon-fighter-jet</a></div>
+      <div class="span3"><a href="../icon/film"><i class="icon-film"></i> icon-film</a></div>
+      <div class="span3"><a href="../icon/filter"><i class="icon-filter"></i> icon-filter</a></div>
+      <div class="span3"><a href="../icon/fire"><i class="icon-fire"></i> icon-fire</a></div>
+      <div class="span3"><a href="../icon/fire-extinguisher"><i class="icon-fire-extinguisher"></i> icon-fire-extinguisher</a></div>
+      <div class="span3"><a href="../icon/flag"><i class="icon-flag"></i> icon-flag</a></div>
+      <div class="span3"><a href="../icon/flag-alt"><i class="icon-flag-alt"></i> icon-flag-alt</a></div>
+      <div class="span3"><a href="../icon/flag-checkered"><i class="icon-flag-checkered"></i> icon-flag-checkered</a></div>
+      <div class="span3"><a href="../icon/folder-close"><i class="icon-folder-close"></i> icon-folder-close</a></div>
+      <div class="span3"><a href="../icon/folder-close-alt"><i class="icon-folder-close-alt"></i> icon-folder-close-alt</a></div>
+      <div class="span3"><a href="../icon/folder-open"><i class="icon-folder-open"></i> icon-folder-open</a></div>
+      <div class="span3"><a href="../icon/folder-open-alt"><i class="icon-folder-open-alt"></i> icon-folder-open-alt</a></div>
+      <div class="span3"><a href="../icon/food"><i class="icon-food"></i> icon-food</a></div>
+      <div class="span3"><a href="../icon/frown"><i class="icon-frown"></i> icon-frown</a></div>
+      <div class="span3"><a href="../icon/gamepad"><i class="icon-gamepad"></i> icon-gamepad</a></div>
+      <div class="span3"><a href="../icon/cog"><i class="icon-gear"></i> icon-gear <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/cogs"><i class="icon-gears"></i> icon-gears <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/gift"><i class="icon-gift"></i> icon-gift</a></div>
+      <div class="span3"><a href="../icon/glass"><i class="icon-glass"></i> icon-glass</a></div>
+      <div class="span3"><a href="../icon/globe"><i class="icon-globe"></i> icon-globe</a></div>
+      <div class="span3"><a href="../icon/group"><i class="icon-group"></i> icon-group</a></div>
+      <div class="span3"><a href="../icon/hdd"><i class="icon-hdd"></i> icon-hdd</a></div>
+      <div class="span3"><a href="../icon/headphones"><i class="icon-headphones"></i> icon-headphones</a></div>
+      <div class="span3"><a href="../icon/heart"><i class="icon-heart"></i> icon-heart</a></div>
+      <div class="span3"><a href="../icon/heart-empty"><i class="icon-heart-empty"></i> icon-heart-empty</a></div>
+      <div class="span3"><a href="../icon/home"><i class="icon-home"></i> icon-home</a></div>
+      <div class="span3"><a href="../icon/inbox"><i class="icon-inbox"></i> icon-inbox</a></div>
+      <div class="span3"><a href="../icon/info"><i class="icon-info"></i> icon-info</a></div>
+      <div class="span3"><a href="../icon/info-sign"><i class="icon-info-sign"></i> icon-info-sign</a></div>
+      <div class="span3"><a href="../icon/key"><i class="icon-key"></i> icon-key</a></div>
+      <div class="span3"><a href="../icon/keyboard"><i class="icon-keyboard"></i> icon-keyboard</a></div>
+      <div class="span3"><a href="../icon/laptop"><i class="icon-laptop"></i> icon-laptop</a></div>
+      <div class="span3"><a href="../icon/leaf"><i class="icon-leaf"></i> icon-leaf</a></div>
+      <div class="span3"><a href="../icon/legal"><i class="icon-legal"></i> icon-legal</a></div>
+      <div class="span3"><a href="../icon/lemon"><i class="icon-lemon"></i> icon-lemon</a></div>
+      <div class="span3"><a href="../icon/level-down"><i class="icon-level-down"></i> icon-level-down</a></div>
+      <div class="span3"><a href="../icon/level-up"><i class="icon-level-up"></i> icon-level-up</a></div>
+      <div class="span3"><a href="../icon/lightbulb"><i class="icon-lightbulb"></i> icon-lightbulb</a></div>
+      <div class="span3"><a href="../icon/location-arrow"><i class="icon-location-arrow"></i> icon-location-arrow</a></div>
+      <div class="span3"><a href="../icon/lock"><i class="icon-lock"></i> icon-lock</a></div>
+      <div class="span3"><a href="../icon/magic"><i class="icon-magic"></i> icon-magic</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/magnet"><i class="icon-magnet"></i> icon-magnet</a></div>
+      <div class="span3"><a href="../icon/share-alt"><i class="icon-mail-forward"></i> icon-mail-forward <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/reply"><i class="icon-mail-reply"></i> icon-mail-reply <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/mail-reply-all"><i class="icon-mail-reply-all"></i> icon-mail-reply-all</a></div>
+      <div class="span3"><a href="../icon/male"><i class="icon-male"></i> icon-male</a></div>
+      <div class="span3"><a href="../icon/map-marker"><i class="icon-map-marker"></i> icon-map-marker</a></div>
+      <div class="span3"><a href="../icon/meh"><i class="icon-meh"></i> icon-meh</a></div>
+      <div class="span3"><a href="../icon/microphone"><i class="icon-microphone"></i> icon-microphone</a></div>
+      <div class="span3"><a href="../icon/microphone-off"><i class="icon-microphone-off"></i> icon-microphone-off</a></div>
+      <div class="span3"><a href="../icon/minus"><i class="icon-minus"></i> icon-minus</a></div>
+      <div class="span3"><a href="../icon/minus-sign"><i class="icon-minus-sign"></i> icon-minus-sign</a></div>
+      <div class="span3"><a href="../icon/minus-sign-alt"><i class="icon-minus-sign-alt"></i> icon-minus-sign-alt</a></div>
+      <div class="span3"><a href="../icon/mobile-phone"><i class="icon-mobile-phone"></i> icon-mobile-phone</a></div>
+      <div class="span3"><a href="../icon/money"><i class="icon-money"></i> icon-money</a></div>
+      <div class="span3"><a href="../icon/moon"><i class="icon-moon"></i> icon-moon</a></div>
+      <div class="span3"><a href="../icon/move"><i class="icon-move"></i> icon-move</a></div>
+      <div class="span3"><a href="../icon/music"><i class="icon-music"></i> icon-music</a></div>
+      <div class="span3"><a href="../icon/off"><i class="icon-off"></i> icon-off</a></div>
+      <div class="span3"><a href="../icon/ok"><i class="icon-ok"></i> icon-ok</a></div>
+      <div class="span3"><a href="../icon/ok-circle"><i class="icon-ok-circle"></i> icon-ok-circle</a></div>
+      <div class="span3"><a href="../icon/ok-sign"><i class="icon-ok-sign"></i> icon-ok-sign</a></div>
+      <div class="span3"><a href="../icon/pencil"><i class="icon-pencil"></i> icon-pencil</a></div>
+      <div class="span3"><a href="../icon/phone"><i class="icon-phone"></i> icon-phone</a></div>
+      <div class="span3"><a href="../icon/phone-sign"><i class="icon-phone-sign"></i> icon-phone-sign</a></div>
+      <div class="span3"><a href="../icon/picture"><i class="icon-picture"></i> icon-picture</a></div>
+      <div class="span3"><a href="../icon/plane"><i class="icon-plane"></i> icon-plane</a></div>
+      <div class="span3"><a href="../icon/plus"><i class="icon-plus"></i> icon-plus</a></div>
+      <div class="span3"><a href="../icon/plus-sign"><i class="icon-plus-sign"></i> icon-plus-sign</a></div>
+      <div class="span3"><a href="../icon/plus-sign-alt"><i class="icon-plus-sign-alt"></i> icon-plus-sign-alt</a></div>
+      <div class="span3"><a href="../icon/off"><i class="icon-power-off"></i> icon-power-off <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/print"><i class="icon-print"></i> icon-print</a></div>
+      <div class="span3"><a href="../icon/pushpin"><i class="icon-pushpin"></i> icon-pushpin</a></div>
+      <div class="span3"><a href="../icon/puzzle-piece"><i class="icon-puzzle-piece"></i> icon-puzzle-piece</a></div>
+      <div class="span3"><a href="../icon/qrcode"><i class="icon-qrcode"></i> icon-qrcode</a></div>
+      <div class="span3"><a href="../icon/question"><i class="icon-question"></i> icon-question</a></div>
+      <div class="span3"><a href="../icon/question-sign"><i class="icon-question-sign"></i> icon-question-sign</a></div>
+      <div class="span3"><a href="../icon/quote-left"><i class="icon-quote-left"></i> icon-quote-left</a></div>
+      <div class="span3"><a href="../icon/quote-right"><i class="icon-quote-right"></i> icon-quote-right</a></div>
+      <div class="span3"><a href="../icon/random"><i class="icon-random"></i> icon-random</a></div>
+      <div class="span3"><a href="../icon/refresh"><i class="icon-refresh"></i> icon-refresh</a></div>
+      <div class="span3"><a href="../icon/remove"><i class="icon-remove"></i> icon-remove</a></div>
+      <div class="span3"><a href="../icon/remove-circle"><i class="icon-remove-circle"></i> icon-remove-circle</a></div>
+      <div class="span3"><a href="../icon/remove-sign"><i class="icon-remove-sign"></i> icon-remove-sign</a></div>
+      <div class="span3"><a href="../icon/reorder"><i class="icon-reorder"></i> icon-reorder</a></div>
+      <div class="span3"><a href="../icon/reply"><i class="icon-reply"></i> icon-reply</a></div>
+      <div class="span3"><a href="../icon/reply-all"><i class="icon-reply-all"></i> icon-reply-all</a></div>
+      <div class="span3"><a href="../icon/resize-horizontal"><i class="icon-resize-horizontal"></i> icon-resize-horizontal</a></div>
+      <div class="span3"><a href="../icon/resize-vertical"><i class="icon-resize-vertical"></i> icon-resize-vertical</a></div>
+      <div class="span3"><a href="../icon/retweet"><i class="icon-retweet"></i> icon-retweet</a></div>
+      <div class="span3"><a href="../icon/road"><i class="icon-road"></i> icon-road</a></div>
+      <div class="span3"><a href="../icon/rocket"><i class="icon-rocket"></i> icon-rocket</a></div>
+      <div class="span3"><a href="../icon/rss"><i class="icon-rss"></i> icon-rss</a></div>
+      <div class="span3"><a href="../icon/rss-sign"><i class="icon-rss-sign"></i> icon-rss-sign</a></div>
+      <div class="span3"><a href="../icon/screenshot"><i class="icon-screenshot"></i> icon-screenshot</a></div>
+      <div class="span3"><a href="../icon/search"><i class="icon-search"></i> icon-search</a></div>
+      <div class="span3"><a href="../icon/share"><i class="icon-share"></i> icon-share</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/share-alt"><i class="icon-share-alt"></i> icon-share-alt</a></div>
+      <div class="span3"><a href="../icon/share-sign"><i class="icon-share-sign"></i> icon-share-sign</a></div>
+      <div class="span3"><a href="../icon/shield"><i class="icon-shield"></i> icon-shield</a></div>
+      <div class="span3"><a href="../icon/shopping-cart"><i class="icon-shopping-cart"></i> icon-shopping-cart</a></div>
+      <div class="span3"><a href="../icon/sign-blank"><i class="icon-sign-blank"></i> icon-sign-blank</a></div>
+      <div class="span3"><a href="../icon/signal"><i class="icon-signal"></i> icon-signal</a></div>
+      <div class="span3"><a href="../icon/signin"><i class="icon-signin"></i> icon-signin</a></div>
+      <div class="span3"><a href="../icon/signout"><i class="icon-signout"></i> icon-signout</a></div>
+      <div class="span3"><a href="../icon/sitemap"><i class="icon-sitemap"></i> icon-sitemap</a></div>
+      <div class="span3"><a href="../icon/smile"><i class="icon-smile"></i> icon-smile</a></div>
+      <div class="span3"><a href="../icon/sort"><i class="icon-sort"></i> icon-sort</a></div>
+      <div class="span3"><a href="../icon/sort-by-alphabet"><i class="icon-sort-by-alphabet"></i> icon-sort-by-alphabet</a></div>
+      <div class="span3"><a href="../icon/sort-by-alphabet-alt"><i class="icon-sort-by-alphabet-alt"></i> icon-sort-by-alphabet-alt</a></div>
+      <div class="span3"><a href="../icon/sort-by-attributes"><i class="icon-sort-by-attributes"></i> icon-sort-by-attributes</a></div>
+      <div class="span3"><a href="../icon/sort-by-attributes-alt"><i class="icon-sort-by-attributes-alt"></i> icon-sort-by-attributes-alt</a></div>
+      <div class="span3"><a href="../icon/sort-by-order"><i class="icon-sort-by-order"></i> icon-sort-by-order</a></div>
+      <div class="span3"><a href="../icon/sort-by-order-alt"><i class="icon-sort-by-order-alt"></i> icon-sort-by-order-alt</a></div>
+      <div class="span3"><a href="../icon/sort-down"><i class="icon-sort-down"></i> icon-sort-down</a></div>
+      <div class="span3"><a href="../icon/sort-up"><i class="icon-sort-up"></i> icon-sort-up</a></div>
+      <div class="span3"><a href="../icon/spinner"><i class="icon-spinner"></i> icon-spinner</a></div>
+      <div class="span3"><a href="../icon/star"><i class="icon-star"></i> icon-star</a></div>
+      <div class="span3"><a href="../icon/star-empty"><i class="icon-star-empty"></i> icon-star-empty</a></div>
+      <div class="span3"><a href="../icon/star-half"><i class="icon-star-half"></i> icon-star-half</a></div>
+      <div class="span3"><a href="../icon/star-half-empty"><i class="icon-star-half-empty"></i> icon-star-half-empty</a></div>
+      <div class="span3"><a href="../icon/star-half-empty"><i class="icon-star-half-full"></i> icon-star-half-full <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/subscript"><i class="icon-subscript"></i> icon-subscript</a></div>
+      <div class="span3"><a href="../icon/suitcase"><i class="icon-suitcase"></i> icon-suitcase</a></div>
+      <div class="span3"><a href="../icon/sun"><i class="icon-sun"></i> icon-sun</a></div>
+      <div class="span3"><a href="../icon/superscript"><i class="icon-superscript"></i> icon-superscript</a></div>
+      <div class="span3"><a href="../icon/tablet"><i class="icon-tablet"></i> icon-tablet</a></div>
+      <div class="span3"><a href="../icon/tag"><i class="icon-tag"></i> icon-tag</a></div>
+      <div class="span3"><a href="../icon/tags"><i class="icon-tags"></i> icon-tags</a></div>
+      <div class="span3"><a href="../icon/tasks"><i class="icon-tasks"></i> icon-tasks</a></div>
+      <div class="span3"><a href="../icon/terminal"><i class="icon-terminal"></i> icon-terminal</a></div>
+      <div class="span3"><a href="../icon/thumbs-down"><i class="icon-thumbs-down"></i> icon-thumbs-down</a></div>
+      <div class="span3"><a href="../icon/thumbs-down-alt"><i class="icon-thumbs-down-alt"></i> icon-thumbs-down-alt</a></div>
+      <div class="span3"><a href="../icon/thumbs-up"><i class="icon-thumbs-up"></i> icon-thumbs-up</a></div>
+      <div class="span3"><a href="../icon/thumbs-up-alt"><i class="icon-thumbs-up-alt"></i> icon-thumbs-up-alt</a></div>
+      <div class="span3"><a href="../icon/ticket"><i class="icon-ticket"></i> icon-ticket</a></div>
+      <div class="span3"><a href="../icon/time"><i class="icon-time"></i> icon-time</a></div>
+      <div class="span3"><a href="../icon/tint"><i class="icon-tint"></i> icon-tint</a></div>
+      <div class="span3"><a href="../icon/trash"><i class="icon-trash"></i> icon-trash</a></div>
+      <div class="span3"><a href="../icon/trophy"><i class="icon-trophy"></i> icon-trophy</a></div>
+      <div class="span3"><a href="../icon/truck"><i class="icon-truck"></i> icon-truck</a></div>
+      <div class="span3"><a href="../icon/umbrella"><i class="icon-umbrella"></i> icon-umbrella</a></div>
+      <div class="span3"><a href="../icon/check-empty"><i class="icon-unchecked"></i> icon-unchecked <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/unlock"><i class="icon-unlock"></i> icon-unlock</a></div>
+      <div class="span3"><a href="../icon/unlock-alt"><i class="icon-unlock-alt"></i> icon-unlock-alt</a></div>
+      <div class="span3"><a href="../icon/upload"><i class="icon-upload"></i> icon-upload</a></div>
+      <div class="span3"><a href="../icon/upload-alt"><i class="icon-upload-alt"></i> icon-upload-alt</a></div>
+      <div class="span3"><a href="../icon/user"><i class="icon-user"></i> icon-user</a></div>
+      <div class="span3"><a href="../icon/volume-down"><i class="icon-volume-down"></i> icon-volume-down</a></div>
+      <div class="span3"><a href="../icon/volume-off"><i class="icon-volume-off"></i> icon-volume-off</a></div>
+      <div class="span3"><a href="../icon/volume-up"><i class="icon-volume-up"></i> icon-volume-up</a></div>
+      <div class="span3"><a href="../icon/warning-sign"><i class="icon-warning-sign"></i> icon-warning-sign</a></div>
+      <div class="span3"><a href="../icon/wrench"><i class="icon-wrench"></i> icon-wrench</a></div>
+      <div class="span3"><a href="../icon/zoom-in"><i class="icon-zoom-in"></i> icon-zoom-in</a></div>
+      <div class="span3"><a href="../icon/zoom-out"><i class="icon-zoom-out"></i> icon-zoom-out</a></div>
+    </div>
+  </div>
+  <div class="hotpad border-none">
+    <h3>Currency Icons</h3>
+    <div class="hotcol-1-3">
+      <div class="span3"><a href="../icon/btc"><i class="icon-bitcoin"></i> icon-bitcoin <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/btc"><i class="icon-btc"></i> icon-btc</a></div>
+      <div class="span3"><a href="../icon/cny"><i class="icon-cny"></i> icon-cny</a></div>
+      <div class="span3"><a href="../icon/usd"><i class="icon-dollar"></i> icon-dollar <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/eur"><i class="icon-eur"></i> icon-eur</a></div>
+    </div>
+    <div class="hotcol-1-3">
+      <div class="span3"><a href="../icon/eur"><i class="icon-euro"></i> icon-euro <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/gbp"><i class="icon-gbp"></i> icon-gbp</a></div>
+      <div class="span3"><a href="../icon/inr"><i class="icon-inr"></i> icon-inr</a></div>
+      <div class="span3"><a href="../icon/jpy"><i class="icon-jpy"></i> icon-jpy</a></div>
+      <div class="span3"><a href="../icon/krw"><i class="icon-krw"></i> icon-krw</a></div>
+    </div>
+    <div class="hotcol-1-3">
+      <div class="span3"><a href="../icon/cny"><i class="icon-renminbi"></i> icon-renminbi <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/inr"><i class="icon-rupee"></i> icon-rupee <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/usd"><i class="icon-usd"></i> icon-usd</a></div>
+      <div class="span3"><a href="../icon/krw"><i class="icon-won"></i> icon-won <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/jpy"><i class="icon-yen"></i> icon-yen <span class="muted">(alias)</span></a></div>
+    </div>
+  </div>
+  <div class="hotpad border-none">
+    <h3>Text Editor Icons</h3>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/align-center"><i class="icon-align-center"></i> icon-align-center</a></div>
+      <div class="span3"><a href="../icon/align-justify"><i class="icon-align-justify"></i> icon-align-justify</a></div>
+      <div class="span3"><a href="../icon/align-left"><i class="icon-align-left"></i> icon-align-left</a></div>
+      <div class="span3"><a href="../icon/align-right"><i class="icon-align-right"></i> icon-align-right</a></div>
+      <div class="span3"><a href="../icon/bold"><i class="icon-bold"></i> icon-bold</a></div>
+      <div class="span3"><a href="../icon/columns"><i class="icon-columns"></i> icon-columns</a></div>
+      <div class="span3"><a href="../icon/copy"><i class="icon-copy"></i> icon-copy</a></div>
+      <div class="span3"><a href="../icon/cut"><i class="icon-cut"></i> icon-cut</a></div>
+      <div class="span3"><a href="../icon/eraser"><i class="icon-eraser"></i> icon-eraser</a></div>
+      <div class="span3"><a href="../icon/file"><i class="icon-file"></i> icon-file</a></div>
+      <div class="span3"><a href="../icon/file-alt"><i class="icon-file-alt"></i> icon-file-alt</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/file-text"><i class="icon-file-text"></i> icon-file-text</a></div>
+      <div class="span3"><a href="../icon/file-text-alt"><i class="icon-file-text-alt"></i> icon-file-text-alt</a></div>
+      <div class="span3"><a href="../icon/font"><i class="icon-font"></i> icon-font</a></div>
+      <div class="span3"><a href="../icon/indent-left"><i class="icon-indent-left"></i> icon-indent-left</a></div>
+      <div class="span3"><a href="../icon/indent-right"><i class="icon-indent-right"></i> icon-indent-right</a></div>
+      <div class="span3"><a href="../icon/italic"><i class="icon-italic"></i> icon-italic</a></div>
+      <div class="span3"><a href="../icon/link"><i class="icon-link"></i> icon-link</a></div>
+      <div class="span3"><a href="../icon/list"><i class="icon-list"></i> icon-list</a></div>
+      <div class="span3"><a href="../icon/list-alt"><i class="icon-list-alt"></i> icon-list-alt</a></div>
+      <div class="span3"><a href="../icon/list-ol"><i class="icon-list-ol"></i> icon-list-ol</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/list-ul"><i class="icon-list-ul"></i> icon-list-ul</a></div>
+      <div class="span3"><a href="../icon/paper-clip"><i class="icon-paper-clip"></i> icon-paper-clip</a></div>
+      <div class="span3"><a href="../icon/paper-clip"><i class="icon-paperclip"></i> icon-paperclip <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/paste"><i class="icon-paste"></i> icon-paste</a></div>
+      <div class="span3"><a href="../icon/repeat"><i class="icon-repeat"></i> icon-repeat</a></div>
+      <div class="span3"><a href="../icon/undo"><i class="icon-rotate-left"></i> icon-rotate-left <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/repeat"><i class="icon-rotate-right"></i> icon-rotate-right <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/save"><i class="icon-save"></i> icon-save</a></div>
+      <div class="span3"><a href="../icon/strikethrough"><i class="icon-strikethrough"></i> icon-strikethrough</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/table"><i class="icon-table"></i> icon-table</a></div>
+      <div class="span3"><a href="../icon/text-height"><i class="icon-text-height"></i> icon-text-height</a></div>
+      <div class="span3"><a href="../icon/text-width"><i class="icon-text-width"></i> icon-text-width</a></div>
+      <div class="span3"><a href="../icon/th"><i class="icon-th"></i> icon-th</a></div>
+      <div class="span3"><a href="../icon/th-large"><i class="icon-th-large"></i> icon-th-large</a></div>
+      <div class="span3"><a href="../icon/th-list"><i class="icon-th-list"></i> icon-th-list</a></div>
+      <div class="span3"><a href="../icon/underline"><i class="icon-underline"></i> icon-underline</a></div>
+      <div class="span3"><a href="../icon/undo"><i class="icon-undo"></i> icon-undo</a></div>
+      <div class="span3"><a href="../icon/unlink"><i class="icon-unlink"></i> icon-unlink</a></div>
+    </div>
+  </div>
+  <div class="hotpad border-none">
+    <h2 class="page-header">Directional Icons</h2>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/angle-down"><i class="icon-angle-down"></i> icon-angle-down</a></div>
+      <div class="span3"><a href="../icon/angle-left"><i class="icon-angle-left"></i> icon-angle-left</a></div>
+      <div class="span3"><a href="../icon/angle-right"><i class="icon-angle-right"></i> icon-angle-right</a></div>
+      <div class="span3"><a href="../icon/angle-up"><i class="icon-angle-up"></i> icon-angle-up</a></div>
+      <div class="span3"><a href="../icon/arrow-down"><i class="icon-arrow-down"></i> icon-arrow-down</a></div>
+      <div class="span3"><a href="../icon/arrow-left"><i class="icon-arrow-left"></i> icon-arrow-left</a></div>
+      <div class="span3"><a href="../icon/arrow-right"><i class="icon-arrow-right"></i> icon-arrow-right</a></div>
+      <div class="span3"><a href="../icon/arrow-up"><i class="icon-arrow-up"></i> icon-arrow-up</a></div>
+      <div class="span3"><a href="../icon/caret-down"><i class="icon-caret-down"></i> icon-caret-down</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/caret-left"><i class="icon-caret-left"></i> icon-caret-left</a></div>
+      <div class="span3"><a href="../icon/caret-right"><i class="icon-caret-right"></i> icon-caret-right</a></div>
+      <div class="span3"><a href="../icon/caret-up"><i class="icon-caret-up"></i> icon-caret-up</a></div>
+      <div class="span3"><a href="../icon/chevron-up"><i class="icon-chevron-up"></i> icon-chevron-up</a></div>
+      <div class="span3"><a href="../icon/chevron-down"><i class="icon-chevron-down"></i> icon-chevron-down</a></div>
+      <div class="span3"><a href="../icon/chevron-left"><i class="icon-chevron-left"></i> icon-chevron-left</a></div>
+      <div class="span3"><a href="../icon/chevron-right"><i class="icon-chevron-right"></i> icon-chevron-right</a></div>
+      <div class="span3"><a href="../icon/chevron-sign-down"><i class="icon-chevron-sign-down"></i> icon-chevron-sign-down</a></div>
+      <div class="span3"><a href="../icon/chevron-sign-left"><i class="icon-chevron-sign-left"></i> icon-chevron-sign-left</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/chevron-sign-right"><i class="icon-chevron-sign-right"></i> icon-chevron-sign-right</a></div>
+      <div class="span3"><a href="../icon/chevron-sign-up"><i class="icon-chevron-sign-up"></i> icon-chevron-sign-up</a></div>
+      <div class="span3"><a href="../icon/circle-arrow-down"><i class="icon-circle-arrow-down"></i> icon-circle-arrow-down</a></div>
+      <div class="span3"><a href="../icon/circle-arrow-left"><i class="icon-circle-arrow-left"></i> icon-circle-arrow-left</a></div>
+      <div class="span3"><a href="../icon/circle-arrow-right"><i class="icon-circle-arrow-right"></i> icon-circle-arrow-right</a></div>
+      <div class="span3"><a href="../icon/circle-arrow-up"><i class="icon-circle-arrow-up"></i> icon-circle-arrow-up</a></div>
+      <div class="span3"><a href="../icon/double-angle-down"><i class="icon-double-angle-down"></i> icon-double-angle-down</a></div>
+      <div class="span3"><a href="../icon/double-angle-left"><i class="icon-double-angle-left"></i> icon-double-angle-left</a></div>
+      <div class="span3"><a href="../icon/double-angle-right"><i class="icon-double-angle-right"></i> icon-double-angle-right</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/double-angle-up"><i class="icon-double-angle-up"></i> icon-double-angle-up</a></div>
+      <div class="span3"><a href="../icon/hand-down"><i class="icon-hand-down"></i> icon-hand-down</a></div>
+      <div class="span3"><a href="../icon/hand-left"><i class="icon-hand-left"></i> icon-hand-left</a></div>
+      <div class="span3"><a href="../icon/hand-right"><i class="icon-hand-right"></i> icon-hand-right</a></div>
+      <div class="span3"><a href="../icon/hand-up"><i class="icon-hand-up"></i> icon-hand-up</a></div>
+      <div class="span3"><a href="../icon/long-arrow-down"><i class="icon-long-arrow-down"></i> icon-long-arrow-down</a></div>
+      <div class="span3"><a href="../icon/long-arrow-left"><i class="icon-long-arrow-left"></i> icon-long-arrow-left</a></div>
+      <div class="span3"><a href="../icon/long-arrow-right"><i class="icon-long-arrow-right"></i> icon-long-arrow-right</a></div>
+      <div class="span3"><a href="../icon/long-arrow-up"><i class="icon-long-arrow-up"></i> icon-long-arrow-up</a></div>
+    </div>
+  </div>
+  <div class="hotpad border-none">
+    <h3>Video Player Icons</h3>
+    <div class="hotcol-1-3">
+      <div class="span3"><a href="../icon/backward"><i class="icon-backward"></i> icon-backward</a></div>
+      <div class="span3"><a href="../icon/eject"><i class="icon-eject"></i> icon-eject</a></div>
+      <div class="span3"><a href="../icon/fast-backward"><i class="icon-fast-backward"></i> icon-fast-backward</a></div>
+      <div class="span3"><a href="../icon/fast-forward"><i class="icon-fast-forward"></i> icon-fast-forward</a></div>
+      <div class="span3"><a href="../icon/forward"><i class="icon-forward"></i> icon-forward</a></div>
+    </div>
+    <div class="hotcol-1-3">
+      <div class="span3"><a href="../icon/fullscreen"><i class="icon-fullscreen"></i> icon-fullscreen</a></div>
+      <div class="span3"><a href="../icon/pause"><i class="icon-pause"></i> icon-pause</a></div>
+      <div class="span3"><a href="../icon/play"><i class="icon-play"></i> icon-play</a></div>
+      <div class="span3"><a href="../icon/play-circle"><i class="icon-play-circle"></i> icon-play-circle</a></div>
+      <div class="span3"><a href="../icon/play-sign"><i class="icon-play-sign"></i> icon-play-sign</a></div>
+    </div>
+    <div class="hotcol-1-3">
+      <div class="span3"><a href="../icon/resize-full"><i class="icon-resize-full"></i> icon-resize-full</a></div>
+      <div class="span3"><a href="../icon/resize-small"><i class="icon-resize-small"></i> icon-resize-small</a></div>
+      <div class="span3"><a href="../icon/step-backward"><i class="icon-step-backward"></i> icon-step-backward</a></div>
+      <div class="span3"><a href="../icon/step-forward"><i class="icon-step-forward"></i> icon-step-forward</a></div>
+      <div class="span3"><a href="../icon/stop"><i class="icon-stop"></i> icon-stop</a></div>
+      <div class="span3"><a href="../icon/youtube-play"><i class="icon-youtube-play"></i> icon-youtube-play</a></div>
+    </div>
+  </div>
+  <div class="hotpad border-none">
+    <h3>Brand Icons</h3>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/adn"><i class="icon-adn"></i> icon-adn</a></div>
+      <div class="span3"><a href="../icon/android"><i class="icon-android"></i> icon-android</a></div>
+      <div class="span3"><a href="../icon/apple"><i class="icon-apple"></i> icon-apple</a></div>
+      <div class="span3"><a href="../icon/bitbucket"><i class="icon-bitbucket"></i> icon-bitbucket</a></div>
+      <div class="span3"><a href="../icon/bitbucket-sign"><i class="icon-bitbucket-sign"></i> icon-bitbucket-sign</a></div>
+      <div class="span3"><a href="../icon/btc"><i class="icon-bitcoin"></i> icon-bitcoin <span class="muted">(alias)</span></a></div>
+      <div class="span3"><a href="../icon/btc"><i class="icon-btc"></i> icon-btc</a></div>
+      <div class="span3"><a href="../icon/css3"><i class="icon-css3"></i> icon-css3</a></div>
+      <div class="span3"><a href="../icon/dribbble"><i class="icon-dribbble"></i> icon-dribbble</a></div>
+      <div class="span3"><a href="../icon/dropbox"><i class="icon-dropbox"></i> icon-dropbox</a></div>
+      <div class="span3"><a href="../icon/facebook"><i class="icon-facebook"></i> icon-facebook</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/facebook-sign"><i class="icon-facebook-sign"></i> icon-facebook-sign</a></div>
+      <div class="span3"><a href="../icon/flickr"><i class="icon-flickr"></i> icon-flickr</a></div>
+      <div class="span3"><a href="../icon/foursquare"><i class="icon-foursquare"></i> icon-foursquare</a></div>
+      <div class="span3"><a href="../icon/github"><i class="icon-github"></i> icon-github</a></div>
+      <div class="span3"><a href="../icon/github-alt"><i class="icon-github-alt"></i> icon-github-alt</a></div>
+      <div class="span3"><a href="../icon/github-sign"><i class="icon-github-sign"></i> icon-github-sign</a></div>
+      <div class="span3"><a href="../icon/gittip"><i class="icon-gittip"></i> icon-gittip</a></div>
+      <div class="span3"><a href="../icon/google-plus"><i class="icon-google-plus"></i> icon-google-plus</a></div>
+      <div class="span3"><a href="../icon/google-plus-sign"><i class="icon-google-plus-sign"></i> icon-google-plus-sign</a></div>
+      <div class="span3"><a href="../icon/html5"><i class="icon-html5"></i> icon-html5</a></div>
+      <div class="span3"><a href="../icon/instagram"><i class="icon-instagram"></i> icon-instagram</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/linkedin"><i class="icon-linkedin"></i> icon-linkedin</a></div>
+      <div class="span3"><a href="../icon/linkedin-sign"><i class="icon-linkedin-sign"></i> icon-linkedin-sign</a></div>
+      <div class="span3"><a href="../icon/linux"><i class="icon-linux"></i> icon-linux</a></div>
+      <div class="span3"><a href="../icon/maxcdn"><i class="icon-maxcdn"></i> icon-maxcdn</a></div>
+      <div class="span3"><a href="../icon/pinterest"><i class="icon-pinterest"></i> icon-pinterest</a></div>
+      <div class="span3"><a href="../icon/pinterest-sign"><i class="icon-pinterest-sign"></i> icon-pinterest-sign</a></div>
+      <div class="span3"><a href="../icon/renren"><i class="icon-renren"></i> icon-renren</a></div>
+      <div class="span3"><a href="../icon/skype"><i class="icon-skype"></i> icon-skype</a></div>
+      <div class="span3"><a href="../icon/stackexchange"><i class="icon-stackexchange"></i> icon-stackexchange</a></div>
+      <div class="span3"><a href="../icon/trello"><i class="icon-trello"></i> icon-trello</a></div>
+      <div class="span3"><a href="../icon/tumblr"><i class="icon-tumblr"></i> icon-tumblr</a></div>
+    </div>
+    <div class="hotcol-1-4">
+      <div class="span3"><a href="../icon/tumblr-sign"><i class="icon-tumblr-sign"></i> icon-tumblr-sign</a></div>
+      <div class="span3"><a href="../icon/twitter"><i class="icon-twitter"></i> icon-twitter</a></div>
+      <div class="span3"><a href="../icon/twitter-sign"><i class="icon-twitter-sign"></i> icon-twitter-sign</a></div>
+      <div class="span3"><a href="../icon/vk"><i class="icon-vk"></i> icon-vk</a></div>
+      <div class="span3"><a href="../icon/weibo"><i class="icon-weibo"></i> icon-weibo</a></div>
+      <div class="span3"><a href="../icon/windows"><i class="icon-windows"></i> icon-windows</a></div>
+      <div class="span3"><a href="../icon/xing"><i class="icon-xing"></i> icon-xing</a></div>
+      <div class="span3"><a href="../icon/xing-sign"><i class="icon-xing-sign"></i> icon-xing-sign</a></div>
+      <div class="span3"><a href="../icon/youtube"><i class="icon-youtube"></i> icon-youtube</a></div>
+      <div class="span3"><a href="../icon/youtube-play"><i class="icon-youtube-play"></i> icon-youtube-play</a></div>
+      <div class="span3"><a href="../icon/youtube-sign"><i class="icon-youtube-sign"></i> icon-youtube-sign</a></div>
+    </div>
+  </div>
+  <div class="hotpad border-none">
+    <h3>Medical Icons</h3>
+    <div class="hotcol-1-1">
+      <div class="span3"><a href="../icon/ambulance"><i class="icon-ambulance"></i> icon-ambulance</a></div>
+      <div class="span3"><a href="../icon/h-sign"><i class="icon-h-sign"></i> icon-h-sign</a></div>
+      <div class="span3"><a href="../icon/hospital"><i class="icon-hospital"></i> icon-hospital</a></div>
+      <div class="span3"><a href="../icon/medkit"><i class="icon-medkit"></i> icon-medkit</a></div>
+      <div class="span3"><a href="../icon/plus-sign-alt"><i class="icon-plus-sign-alt"></i> icon-plus-sign-alt</a></div>
+      <div class="span3"><a href="../icon/stethoscope"><i class="icon-stethoscope"></i> icon-stethoscope</a></div>
+      <div class="span3"><a href="../icon/user-md"><i class="icon-user-md"></i> icon-user-md</a></div>
+    </div>
+  </div>
+    
+  <br />
+</div>
+
+
+<div class="hotcontainer" id="AboutUs">
+  <hr />
+    <h2>About Us</h2>
+   <hr /> 
+  
+  <div class="hotpad border-none">    
+    <p>#</p>
+    <br />
+   </div>     
+</div>
+    
+<!--FIM CONTAINER--> 
+
+</div><!--fim canvas--> 
+</div><!--fim offcanvas--> 
+</body>
+</html>

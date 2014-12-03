@@ -1,0 +1,38 @@
+
+/* table overflow
+================================================== */
+.hottable table { 
+        width: 100%; 
+        border-collapse: collapse; 
+}
+.hottable tr:nth-of-type(odd) { 
+        background: #eee; 
+}
+.hottable th { 
+        background: #333; 
+        color: white; 
+        font-weight: bold; 
+}
+.hottable td, th { 
+        padding: 6px; 
+        border: 1px solid #ccc; 
+        text-align: left; 
+}
+/* tables overflow*/
+@media only screen and (max-width: 767px) { 
+
+    .hottable.table-overflow { display: block; position: relative; width: 100%; }
+    .hottable.table-overflow thead { display: block; float: left; }
+    .hottable.table-overflow tbody { display: -webkit-box; overflow-x: auto; border-right: 1px solid #ccc; }
+    .hottable.table-overflow th,
+    .hottable.table-overflow tr,
+    .hottable.table-overflow td { display: block; }
+    /* sort out borders */
+    .hottable.table-overflow th { border-bottom: 0; }
+    .hottable.table-overflow td { border-left: 0; border-right: 0; border-bottom: 0; }
+    .hottable.table-overflow tbody tr { border-right: 1px solid #ccc; }
+    .hottable.table-overflow th:last-child,
+    .hottable.table-overflow td:last-child { border-bottom: 1px solid #ccc; }
+}
+
+

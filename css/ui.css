@@ -1,0 +1,144 @@
+/* hotcrumbs
+================================================== */
+.hotcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  font-size: 11px;
+}
+.hotcrumb a {  
+  font-size: 11px;
+}
+.hotcrumb > li {
+  display: inline-block;
+}
+.hotcrumb > li + li:before {
+  content: "/\00a0";
+  padding: 0 5px;
+  color: #cccccc;
+}
+.hotcrumb > .active {
+  color: #999999;
+}
+
+
+/* hotstep
+==================================================
+creditos: http://blog.sathomas.me/post/tracking-progress-in-pure-css */
+
+ol.hotstep {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: relative;
+    z-index: auto;
+}
+
+ol.hotstep li {
+    display: inline-block;
+    margin: -2px;
+    padding: 2px;
+    text-align: center;
+    line-height: 3em;    
+    z-index: auto;
+    white-space: nowrap;
+}
+ol.hotstep-steps   li { width: auto; }
+ol.hotstep-steps-2 li { width: 49%; }
+ol.hotstep-steps-3 li { width: 33%; }
+ol.hotstep-steps-4 li { width: 24%; }
+ol.hotstep-steps-5 li { width: 19%; }
+ol.hotstep-steps-6 li { width: 16%; }
+ol.hotstep-steps-7 li { width: 14%; }
+ol.hotstep-steps-8 li { width: 12%; }
+ol.hotstep-steps-9 li { width: 11%; }
+
+
+ol.hotstep li.hotstep-done {
+    color: black;
+    font-size: 100%;
+    text-wrap: none;
+    border-bottom: 4px solid limegreen;
+}
+ol.hotstep li.hotstep-todo {
+    color: silver; 
+    font-size: 100%;
+    text-wrap: none;
+    border-bottom: 4px solid silver;
+}
+
+ol.hotstep li:after {
+    content: "\00a0\00a0";
+}
+ol.hotstep li:before {
+    position: relative;
+    bottom: -2.5em;
+    float: left;
+    left: 50%;
+    line-height: 1em;
+}
+ol.hotstep li.hotstep-done:before {
+    content: "\2713";
+    color: white;
+    background-color: limegreen;
+    height: 1.2em;
+    width: 1.2em;
+    line-height: 1.2em;
+    border: .1em white solid; 
+    border-radius: 1.2em;
+}
+ol.hotstep li.hotstep-todo:before {
+    content: "\039F";
+    color: silver;
+    background-color: white;
+    font-size: 1.5em;
+    bottom: -1.6em;
+}
+@media screen and (max-width: 768px) {
+    ol.hotstep li.hotstep-done , ol.hotstep li.hotstep-todo {        
+        font-size: 60%;
+        border-bottom: 1px solid limegreen;
+    }
+    ol.hotstep li.hotstep-todo {  
+        border-bottom: 1px solid silver;
+    }
+}
+
+/* hottabs
+================================================== */
+
+.hottabs { 
+    padding: 0px; 
+    background: none; 
+    border-width: 0px; 
+} 
+.hottabs .ui-tabs-nav { 
+    padding-left: 0px; 
+    background: transparent; 
+    border-width: 0px 0px 1px 0px; 
+    -moz-border-radius: 3px; 
+    -webkit-border-radius: 3px; 
+    border-radius: 3px; 
+} 
+.hottabs .ui-tabs-panel { 
+    border-width: 0px 1px 1px 1px; 
+}
+@media screen and (max-width: 768px) {
+    
+    
+    .ui-tabs .ui-tabs-nav {
+	margin: 0;
+	padding: 0;
+    }
+    .ui-tabs .ui-tabs-nav li {            
+            width: 100%;            
+            margin: 0;
+            
+    }
+    .ui-tabs .ui-tabs-nav li a {
+            width: 100%;              
+    }
+    
+}
