@@ -1,5 +1,4 @@
 /* font padrao
-
 ================================================== */
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
@@ -42,7 +41,7 @@ img { max-width:100% !important; max-height:100% !important; }
 .padding-10px{ padding: 10px 10px 10px 10px; }
 .padding-20px{ padding: 20px 20px 20px 20px; }
 
-.hotimgcircle { -webkit-border-radius: 500px; -moz-border-radius: 500px; border-radius: 500px; }
+.img-circle { -webkit-border-radius: 500px; -moz-border-radius: 500px; border-radius: 500px; }
 
 .success {background: rgb(28, 184, 65); /* this is a green */}
 .error {background: rgb(202, 60, 60); /* this is a maroon */}
@@ -61,6 +60,24 @@ img { max-width:100% !important; max-height:100% !important; }
 ================================================== */
 .fixed-header { position: fixed; top: 0;  z-index: 999; }
 .fixed-footer { position: fixed; bottom: 0; z-index: 999; }
+
+.responsive-embed {
+	position: relative;
+	padding-bottom: 55%;
+	padding-top: 10px;
+	height: 0;
+	overflow: hidden;
+}
+
+.responsive-embed iframe,  
+.responsive-embed object,  
+.responsive-embed embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 
 /* hotbox --------------------------- */
 .hotbox {  
