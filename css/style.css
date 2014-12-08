@@ -12,17 +12,19 @@ body {
 	z-index: 1;
 } /*offcanvas*/
 body {
-	margin: 125px 0 100px 0;
+	margin: 85px 0 100px 0;
 	padding: 0px;
+        font-size: 14px;
 }
-a {
-	font-size: 18px;
+a {	
 	color: #888;
 	text-decoration: none;
 }
 a:hover {
 	color: #666;
 }
+
+
 .right {
 	float: right;
 }
@@ -33,31 +35,35 @@ a:hover {
 	background-color: #000;
 	color: #fff;
 }
-.font-write {
-	color: #FFF;
-}
+header h1{margin: 0;}
+h2 { font-size: 2.4em; margin: 0.7em 0;}
+h2 { font-size: 2em; margin: 0.7em 0;}
+
+hr {background: #ddd; height: 1px; border: none; margin:0 0 1.5em 0; }
+
 .content {
-	background:#ccc;
+	background:#eee;
 	text-align: center;
+        border: #ccc solid 1px;
 }
-.bg-red {
-	background: red;
-}
-.bg-blue {
-	background: #4697e4;
-}
-.bg-green {
-	background: limegreen;
-}
-.bg-gold {
-	background: gold;
-}
-.bg-orange {
-	background: orange;
-}
-.hotpad {
-	border: #ccc dotted 1px;
-}
+.bg-red { background: red; }
+.bg-blue { background: #4697e4; }
+.bg-green { background: limegreen; }
+.bg-gold { background: gold; }
+.bg-orange { background: orange; }
+.bg-black { background: black; }
+.bg-gray { background: #eee; }
+
+.font-red { color: red; }
+.font-blue { color: #4697e4; }
+.font-green { color: limegreen; }
+.font-gold { color: gold; }
+.font-orange { color: orange; }
+.font-white { color: white; }
+.font-black { color: black; }
+
+.hotpad { border: #ccc dotted 1px; }
+
 
 /* offcanvas - style bts */ 
 
@@ -93,3 +99,97 @@ a:hover {
 .btoffcanvas.btoffcanvas-right-out:before {content: "\f057"; font-family: FontAwesome;}
 .btoffcanvas.btoffcanvas-bottom-out:before {content: "\f057"; font-family: FontAwesome;}
 
+/*==================================================+ 
+    #Media Queries - mobile first!                  
+===================================================*/
+/* extra small devices 
+----------------------------------------------------*/
+@media (max-width: 767px) {
+    
+    .bg-red-xsmall { background: red !important; }
+    .bg-blue-xsmall { background: #4697e4 !important; }
+    .bg-green-xsmall { background: limegreen !important; }
+    .bg-gold-xsmall { background: gold !important; }
+    .bg-orange-xsmall { background: orange !important; }
+
+}
+
+/* small devices or less
+----------------------------------------------------*/
+@media (max-width: 960px) {
+    
+          
+}
+
+/* small devices only
+----------------------------------------------------*/
+@media (min-width: 768px) and (max-width: 960px) {
+    .bg-red-small { background: red !important; }
+    .bg-blue-small { background: #4697e4 !important; }
+    .bg-green-small { background: limegreen !important; }
+    .bg-gold-small { background: gold !important; }
+    .bg-orange-small { background: orange !important; }
+}
+
+/* small devices or greater
+----------------------------------------------------*/
+
+/* medium devices or less
+----------------------------------------------------*/
+@media (max-width: 1280px) {
+    
+        
+}
+
+/* medium devices only
+----------------------------------------------------*/
+@media (min-width: 961px) and (max-width: 1280px) {
+    .bg-red-medium { background: red !important; }
+    .bg-blue-medium { background: #4697e4 !important; }
+    .bg-green-medium { background: limegreen !important; }
+    .bg-gold-medium { background: gold !important; }
+    .bg-orange-medium { background: orange !important; }
+}
+
+/* medium devices or greater
+----------------------------------------------------*/
+@media (min-width: 961px) {
+    
+
+}
+
+/* large devices or less
+----------------------------------------------------*/
+@media (max-width: 1920px) {
+    
+    
+}
+
+/* large devices only
+----------------------------------------------------*/
+@media (min-width: 1281px) and (max-width: 1920px) {
+    .bg-red-large { background: red !important; }
+    .bg-blue-large { background: #4697e4 !important; }
+    .bg-green-large { background: limegreen !important; }
+    .bg-gold-large { background: gold !important; }
+    .bg-orange-large { background: orange !important; }
+}
+
+/* large devices or greater
+----------------------------------------------------*/
+@media (min-width: 1281px) {
+    
+    
+}
+
+/* extra large devices 
+----------------------------------------------------*/
+
+@media (min-width: 1921px) {
+    .bg-red-xlarge { background: red !important; }
+    .bg-blue-xlarge { background: #4697e4 !important; }
+    .bg-green-xlarge { background: limegreen !important; }
+    .bg-gold-xlarge { background: gold !important; }
+    .bg-orange-xlarge { background: orange !important; }
+     
+}

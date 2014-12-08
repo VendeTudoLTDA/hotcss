@@ -4,53 +4,45 @@
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
-body { font-family: 'Open Sans', sans-serif; }
-
-
-
-/* Global
-
+/* Global html
 ================================================== */
 
-.clear-both {clear:both;}
+body { font-family: 'Open Sans', sans-serif; }
+img { max-width:100% !important; max-height:100% !important; }
 
+/* Global styles
+================================================== */
+
+.clear {clear:both !important;}
+.nowrap { white-space: nowrap !important; }
 .border-none { border: none !important; }
+.text-align-center, .text-center { text-align: center !important; }
+.text-align-left, .text-left { text-align: left !important; }
+.text-align-right, .text-right { text-align: right !important; }
+.text-small { font-size: .5em; }
+.text-large { font-size: 1.5em; }
+.text-2x { font-size: 2em; }
+.text-3x { font-size: 3em; }
 
 
-
-.text-align-center { text-align: center; }
-
-.text-align-left { text-align: left; }
-
-.text-align-right { text-align: right; }
-
-.list-style-none { list-style: none; }
-
-
-
-.float-right { float: right !important; }
-
-.float-left { float: left !important; }
-
-
-
+.list-style-none { list-style: none !important; }
+.float-right, .right { float: right !important; }
+.float-left, .left { float: left !important; }
 .hide { display: none !important; }
-
 .show { display: block !important; }
+.invisible { visibility: hidden !important; }
 
-.invisible { visibility: hidden; }
+.overflow{ overflow: auto; display: block; }
+.overflow-x{ overflow-x: auto; display: block; }
+.overflow-y{ overflow-y: auto; display: block; }
 
-
-
+.vertical-align { padding-top: 50%;}
 .padding-0{ padding: 0; }
-
 .padding-5px{ padding: 5px 5px 5px 5px; }
-
 .padding-10px{ padding: 10px 10px 10px 10px; }
-
 .padding-20px{ padding: 20px 20px 20px 20px; }
 
-
+.hotimgcircle { -webkit-border-radius: 500px; -moz-border-radius: 500px; border-radius: 500px; }
 
 .success {background: rgb(28, 184, 65); /* this is a green */}
 .error {background: rgb(202, 60, 60); /* this is a maroon */}
@@ -67,30 +59,10 @@ body { font-family: 'Open Sans', sans-serif; }
 /* layouts
 
 ================================================== */
-
-
-
-/* header --------------------------- */
-
-.fixed-header {   
-
-  position: fixed;  
-  top: 0;      
-  z-index: 999;
-}
-
-/* footer --------------------------- */
-
-.fixed-footer {  
-
-  position: fixed;  
-  bottom: 0;  
-  z-index: 999;
-
-}
+.fixed-header { position: fixed; top: 0;  z-index: 999; }
+.fixed-footer { position: fixed; bottom: 0; z-index: 999; }
 
 /* hotbox --------------------------- */
-
 .hotbox {  
   margin: 10px 10px 10px 10px;
   background-color: #ffffff;
@@ -99,7 +71,6 @@ body { font-family: 'Open Sans', sans-serif; }
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
 }
-
 .hotbox-header {
   padding: 10px 15px;
   background-color: #eee;
@@ -107,84 +78,121 @@ body { font-family: 'Open Sans', sans-serif; }
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
-
 .hotbox-title {
-
   margin: 8px 10px;
   font-size: 22px;
-
 }
-
 .hotbox-content {
-
   padding: 15px;
-
 }
-
 .hotbox-footer {
-
   padding: 10px 15px;
-
   background-color: #eee;
-
   border-top: 1px solid #888;
-
   border-bottom-right-radius: 3px;
-
   border-bottom-left-radius: 3px;
-
 }
-
 /* hotwell --------------------------- */
-
 .hotwell {
-
   min-height: 20px;
-
   padding: 19px;
-
   margin-bottom: 20px;
-
   background-color: #f5f5f5;
-
   border: 1px solid #e3e3e3;
-
   border-radius: 4px;
-
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
-
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
-
 }
-
 /* alerts --------------------------- */
-
 [class*='hotalert-'] {
-
   min-height: 20px;
-
   padding: 10px 20px;
-
   margin: 20px;  
-
   border-radius: 3px;
-
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
-
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
-
 }
-
 .hotalert-success {background: rgb(28, 184, 65); color: #ffffff; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);}
-
 .hotalert-error {background: rgb(202, 60, 60); color: #ffffff; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);}
-
 .hotalert-warning {background: rgb(223, 117, 20); color: #ffffff; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);}
-
 .hotalert-info {background: rgb(66, 184, 221); color: #ffffff; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);}
 
+/*==================================================+ 
+    #Media Queries - mobile first!                  
+===================================================*/
+/* extra small devices 
+----------------------------------------------------*/
+@media (max-width: 767px) {
+    
+        
+}
 
-/* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 767px) {
-    .hotbox { width: 100%; }
+/* small devices or less
+----------------------------------------------------*/
+@media (max-width: 960px) {
+    
+          
+}
+
+/* small devices only
+----------------------------------------------------*/
+@media (min-width: 768px) and (max-width: 960px) {
+    
+    
+}
+
+/* small devices or greater
+----------------------------------------------------*/
+@media (min-width: 768px) {
+ 
+    
+}
+/* medium devices or less
+----------------------------------------------------*/
+@media (max-width: 1280px) {
+    
+        
+}
+
+/* medium devices only
+----------------------------------------------------*/
+@media (min-width: 961px) and (max-width: 1280px) {
+    
+    
+}
+
+/* medium devices or greater
+----------------------------------------------------*/
+@media (min-width: 961px) {
+    
+
+}
+
+/* large devices or less
+----------------------------------------------------*/
+@media (max-width: 1920px) {
+    
+    
+}
+
+/* large devices only
+----------------------------------------------------*/
+@media (min-width: 1281px) and (max-width: 1920px) {
+    
+    
+}
+
+/* large devices or greater
+----------------------------------------------------*/
+@media (min-width: 1281px) {
+    
+    
+}
+
+/* extra large devices 
+----------------------------------------------------*/
+
+@media (min-width: 1921px) {
+    
+     
 }

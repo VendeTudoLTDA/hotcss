@@ -23,7 +23,6 @@
   color: #999999;
 }
 
-
 /* hotstep
 ==================================================
 creditos: http://blog.sathomas.me/post/tracking-progress-in-pure-css */
@@ -124,21 +123,4 @@ ol.hotstep li.hotstep-todo:before {
 } 
 .hottabs .ui-tabs-panel { 
     border-width: 0px 1px 1px 1px; 
-}
-@media screen and (max-width: 768px) {
-    
-    
-    .ui-tabs .ui-tabs-nav {
-	margin: 0;
-	padding: 0;
-    }
-    .ui-tabs .ui-tabs-nav li {            
-            width: 100%;            
-            margin: 0;
-            
-    }
-    .ui-tabs .ui-tabs-nav li a {
-            width: 100%;              
-    }
-    
 }
