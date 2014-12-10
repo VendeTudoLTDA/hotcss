@@ -202,7 +202,7 @@ height:0;
     
     .show-small-up { display: block !important; }
     .hide-small-up { display: none !important; }
-    
+     
     /* grid xsmall ou padrao*/ 
     .hotcol-small-1-1, .hotcol-small-12-12, .hotcol-small-1 { 
             width: 100%;
