@@ -144,14 +144,26 @@ https://github.com/yui/pure/blob/master/LICENSE.md
 	color:#666;
 	font-size:90%
 }
-.hotform .hotinput-1-1, .hotform .hotinput-1 {width:100%;}
-.hotform .hotinput-3-4 {width:75%;}
-.hotform .hotinput-2-3 {width:66%;}
-.hotform .hotinput-1-2 {width:50%;}
-.hotform .hotinput-1-3 {width:33%;}
-.hotform .hotinput-1-4 {width:25%;}
 
-@media only screen and (max-width:480px) {
+[class*='hotinput-'] {	     
+        width: 100%;
+}
+
+.hotinput-1-1, .hotinput-1, .hotinput-xsmall-1-1, .hotinput-xsmall-1 {width:100%;}
+.hotinput-3-4, .hotinput-xsmall-3-4 {width:75%;}
+.hotinput-2-3, .hotinput-xsmall-2-3 {width:66%;}
+.hotinput-1-2, .hotinput-xsmall-1-2 {width:50%;}
+.hotinput-1-3, .hotinput-xsmall-1-3 {width:33%;}
+.hotinput-1-4, .hotinput-xsmall-1-4 {width:25%;}
+
+
+/*==================================================+ 
+    #Media Queries - mobile first!                  
+===================================================*/
+/* extra small devices 
+----------------------------------------------------*/
+@media (max-width: 767px) {
+    
 	.hotform button[type=submit] {
 		margin:.7em 0 0
 	}
@@ -175,13 +187,100 @@ https://github.com/yui/pure/blob/master/LICENSE.md
 		display:block;
 		font-size:80%;
 		padding: .2em 0 .8em
-	}
+	}  
+        
 }
 
-/*!
-Pure v0.3.0
-Copyright 2013 Yahoo! Inc. All rights reserved.
-Licensed under the BSD License.
-https://github.com/yui/pure/blob/master/LICENSE.md
-*/
-.hotform input[type=text],.hotform input[type=password],.hotform input[type=email],.hotform input[type=url],.hotform input[type=date],.hotform input[type=month],.hotform input[type=time],.hotform input[type=datetime],.hotform input[type=datetime-local],.hotform input[type=week],.hotform input[type=number],.hotform input[type=search],.hotform input[type=tel],.hotform input[type=color],.hotform select,.hotform textarea{padding:.5em .6em;display:inline-block;border:1px solid #ccc;font-size:.8em;box-shadow:inset 0 1px 3px #ddd;border-radius:4px;-webkit-transition:.3s linear border;-moz-transition:.3s linear border;-ms-transition:.3s linear border;-o-transition:.3s linear border;transition:.3s linear border;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.hotform input[type=text]:focus,.hotform input[type=password]:focus,.hotform input[type=email]:focus,.hotform input[type=url]:focus,.hotform input[type=date]:focus,.hotform input[type=month]:focus,.hotform input[type=time]:focus,.hotform input[type=datetime]:focus,.hotform input[type=datetime-local]:focus,.hotform input[type=week]:focus,.hotform input[type=number]:focus,.hotform input[type=search]:focus,.hotform input[type=tel]:focus,.hotform input[type=color]:focus,.hotform select:focus,.hotform textarea:focus{outline:0;outline:thin dotted \9;border-color:#129FEA}.hotform input[type=file]:focus,.hotform input[type=radio]:focus,.hotform input[type=checkbox]:focus{outline:thin dotted #333;outline:1px auto #129FEA}.hotform .pure-checkbox,.hotform .pure-radio{margin:.5em 0;display:block}.hotform input[type=text][disabled],.hotform input[type=password][disabled],.hotform input[type=email][disabled],.hotform input[type=url][disabled],.hotform input[type=date][disabled],.hotform input[type=month][disabled],.hotform input[type=time][disabled],.hotform input[type=datetime][disabled],.hotform input[type=datetime-local][disabled],.hotform input[type=week][disabled],.hotform input[type=number][disabled],.hotform input[type=search][disabled],.hotform input[type=tel][disabled],.hotform input[type=color][disabled],.hotform select[disabled],.hotform textarea[disabled]{cursor:not-allowed;background-color:#eaeded;color:#cad2d3}.hotform input[readonly],.hotform select[readonly],.hotform textarea[readonly]{background:#eee;color:#777;border-color:#ccc}.hotform input:focus:invalid,.hotform textarea:focus:invalid,.hotform select:focus:invalid{color:#b94a48;border:1px solid #ee5f5b}.hotform input:focus:invalid:focus,.hotform textarea:focus:invalid:focus,.hotform select:focus:invalid:focus{border-color:#e9322d}.hotform input[type=file]:focus:invalid:focus,.hotform input[type=radio]:focus:invalid:focus,.hotform input[type=checkbox]:focus:invalid:focus{outline-color:#e9322d}.hotform select{border:1px solid #ccc;background-color:#fff}.hotform select[multiple]{height:auto}.hotform label{margin:.5em 0 .2em;font-size:90%}.hotform fieldset{margin:0;padding:.35em 0 .75em;border:0}.hotform legend{display:block;width:100%;padding:.3em 0;margin-bottom:.3em;font-size:125%;color:#333;border-bottom:1px solid #e5e5e5}.hotform-stacked input[type=text],.hotform-stacked input[type=password],.hotform-stacked input[type=email],.hotform-stacked input[type=url],.hotform-stacked input[type=date],.hotform-stacked input[type=month],.hotform-stacked input[type=time],.hotform-stacked input[type=datetime],.hotform-stacked input[type=datetime-local],.hotform-stacked input[type=week],.hotform-stacked input[type=number],.hotform-stacked input[type=search],.hotform-stacked input[type=tel],.hotform-stacked input[type=color],.hotform-stacked select,.hotform-stacked label,.hotform-stacked textarea{display:block;margin:.25em 0}.hotform-aligned input,.hotform-aligned textarea,.hotform-aligned select,.hotform-aligned .pure-help-inline,.hotform-message-inline{display:inline-block;*display:inline;*zoom:1;vertical-align:middle}.hotform-aligned .pure-control-group{margin-bottom:.5em}.hotform-aligned .pure-control-group label{text-align:right;display:inline-block;vertical-align:middle;width:10em;margin:0 1em 0 0}.hotform-aligned .pure-controls{margin:1.5em 0 0 10em}.hotform input.hotinput-rounded,.hotform .hotinput-rounded{border-radius:2em;padding:.5em 1em}.hotform .pure-group fieldset{margin-bottom:10px}.hotform .pure-group input{display:block;padding:10px;margin:0;border-radius:0;position:relative;top:-1px}.hotform .pure-group input:focus{z-index:2}.hotform .pure-group input:first-child{top:1px;border-radius:4px 4px 0 0}.hotform .pure-group input:last-child{top:-2px;border-radius:0 0 4px 4px}.hotform .pure-group button{margin:.35em 0}.hotform .hotinput-1{width:100%}.hotform .hotinput-2-3{width:66%}.hotform .hotinput-1-2{width:50%}.hotform .hotinput-1-3{width:33%}.hotform .hotinput-1-4{width:25%}.hotform .pure-help-inline,.hotform-message-inline{display:inline-block;padding-left:.3em;color:#666;vertical-align:middle;font-size:90%}.hotform-message{display:block;color:#666;font-size:90%}@media only screen and (max-width :480px){.hotform button[type=submit]{margin:.7em 0 0}.hotform input[type=text],.hotform input[type=password],.hotform input[type=email],.hotform input[type=url],.hotform input[type=date],.hotform input[type=month],.hotform input[type=time],.hotform input[type=datetime],.hotform input[type=datetime-local],.hotform input[type=week],.hotform input[type=number],.hotform input[type=search],.hotform input[type=tel],.hotform input[type=color],.hotform label{margin-bottom:.3em;display:block}.pure-group input[type=text],.pure-group input[type=password],.pure-group input[type=email],.pure-group input[type=url],.pure-group input[type=date],.pure-group input[type=month],.pure-group input[type=time],.pure-group input[type=datetime],.pure-group input[type=datetime-local],.pure-group input[type=week],.pure-group input[type=number],.pure-group input[type=search],.pure-group input[type=tel],.pure-group input[type=color]{margin-bottom:0}.hotform-aligned .pure-control-group label{margin-bottom:.3em;text-align:left;display:block;width:100%}.hotform-aligned .pure-controls{margin:1.5em 0 0}.hotform .pure-help-inline,.hotform-message-inline,.hotform-message{display:block;font-size:80%;padding:.2em 0 .8em}}
+/* small devices or less
+----------------------------------------------------*/
+@media (max-width: 960px) {
+    
+          
+}
+
+/* small devices only
+----------------------------------------------------*/
+@media (min-width: 768px) and (max-width: 960px) {
+    
+    
+}
+
+/* small devices or greater
+----------------------------------------------------*/
+@media (min-width: 768px) {
+    
+.hotinput-small-1-1, .hotinput-small-1 {width:100%;}
+.hotinput-small-3-4 {width:75%;}
+.hotinput-small-2-3 {width:66%;}
+.hotinput-small-1-2 {width:50%;}
+.hotinput-small-1-3 {width:33%;}
+.hotinput-small-1-4 {width:25%;} 
+    
+}
+/* medium devices or less
+----------------------------------------------------*/
+@media (max-width: 1280px) {
+    
+        
+}
+
+/* medium devices only
+----------------------------------------------------*/
+@media (min-width: 961px) and (max-width: 1280px) {
+    
+    
+}
+
+/* medium devices or greater
+----------------------------------------------------*/
+@media (min-width: 961px) {
+    
+.hotinput-medium-1-1, .hotinput-medium-1 {width:100%;}
+.hotinput-medium-3-4 {width:75%;}
+.hotinput-medium-2-3 {width:66%;}
+.hotinput-medium-1-2 {width:50%;}
+.hotinput-medium-1-3 {width:33%;}
+.hotinput-medium-1-4 {width:25%;}
+
+}
+
+/* large devices or less
+----------------------------------------------------*/
+@media (max-width: 1920px) {
+    
+    
+}
+
+/* large devices only
+----------------------------------------------------*/
+@media (min-width: 1281px) and (max-width: 1920px) {
+    
+    
+}
+
+/* large devices or greater
+----------------------------------------------------*/
+@media (min-width: 1281px) {
+    
+.hotinput-large-1-1, .hotinput-large-1 {width:100%;}
+.hotinput-large-3-4 {width:75%;}
+.hotinput-large-2-3 {width:66%;}
+.hotinput-large-1-2 {width:50%;}
+.hotinput-large-1-3 {width:33%;}
+.hotinput-large-1-4 {width:25%;}
+    
+}
+
+/* extra large devices 
+----------------------------------------------------*/
+
+@media (min-width: 1921px) {
+    
+.hotinput-xlarge-1-1, .hotinput-xlarge-1 {width:100%;}
+.hotinput-xlarge-3-4 {width:75%;}
+.hotinput-xlarge-2-3 {width:66%;}
+.hotinput-xlarge-1-2 {width:50%;}
+.hotinput-xlarge-1-3 {width:33%;}
+.hotinput-xlarge-1-4 {width:25%;}
+
+}
